@@ -191,8 +191,8 @@
     .configurator-head h2 { margin: 21px 0 0; font-family: var(--serif); font-size: clamp(43px, 5.4vw, 75px); font-weight: 400; letter-spacing: -.055em; line-height: 1.02; }
     .configurator-head h2 em { color: var(--gold-dark); font-weight: 400; }
     .configurator-head > p { max-width: 385px; margin: 0 0 5px; color: #6c6f69; font-size: 12px; line-height: 1.85; }
-    .configurator-layout { display: grid; grid-template-columns: 1.18fr .82fr; align-items: stretch; gap: clamp(25px, 4vw, 58px); }
-    .config-stage { position: relative; min-height: 500px; aspect-ratio: 1.32 / 1; overflow: hidden; background: #101820; }
+    .configurator-layout { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr); align-items: start; gap: clamp(25px, 4vw, 58px); }
+    .config-stage { position: relative; width: 100%; min-width: 0; min-height: 0; aspect-ratio: 1.32 / 1; overflow: hidden; background: #101820; }
     .config-stage::after { position: absolute; inset: 0; content: ""; pointer-events: none; background: linear-gradient(0deg, rgba(7,13,18,.72), transparent 45%), linear-gradient(90deg, rgba(7,13,18,.28), transparent 62%); }
     .config-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 65% center; transition: opacity .28s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
     .config-stage img.is-changing { opacity: .25; transform: scale(1.025); }
@@ -203,7 +203,7 @@
     .config-stage-top strong { font-size: 8px; font-weight: 600; letter-spacing: .17em; }
     .config-stage-bottom strong { display: block; margin-top: 6px; font-family: var(--serif); font-size: 23px; font-weight: 400; }
     .config-stage-bottom small { align-self: flex-end; }
-    .config-controls { padding: clamp(22px, 3vw, 38px); background: #e8e5de; }
+    .config-controls { min-width: 0; padding: clamp(22px, 3vw, 38px); background: #e8e5de; }
     .config-control-head { display: flex; align-items: baseline; justify-content: space-between; gap: 15px; margin-bottom: 16px; }
     .config-control-head h3 { margin: 0; font-size: 9px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
     .config-control-head span { color: var(--gold-dark); font-family: var(--serif); font-size: 14px; }
@@ -356,6 +356,8 @@
       .main-nav a, .header-cta, .language-toggle { font-size: 8px; }
       .hero { min-height: 780px; }
       .hero h1 { font-size: clamp(58px, 8vw, 82px); }
+      .configurator-layout { grid-template-columns: minmax(0, 1fr); align-items: start; gap: 18px; }
+      .config-stage { min-height: 0; aspect-ratio: 1.65 / 1; }
       .philosophy-grid { grid-template-columns: 155px 1fr; gap: 32px; }
       .atelier-grid { gap: 6vw; }
       .footer-cta { align-items: flex-start; flex-direction: column; }
