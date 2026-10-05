@@ -1,0 +1,1211 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101820">
+  <meta name="description" content="AURELION — независимая автомобильная марка из Турина. Познакомьтесь с Vespera: гиперкаром, в котором инженерия встречает искусство.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AURELION">
+  <meta property="og:title" content="AURELION Vespera — engineering, elevated to art">
+  <meta property="og:description" content="A singular hypercar, imagined in Torino and made by hand.">
+  <meta property="og:image" content="https://aurelion.example/public/aurelion-hero.jpg">
+  <meta property="og:url" content="https://aurelion.example/">
+  <link rel="canonical" href="https://aurelion.example/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AURELION Vespera">
+  <meta name="twitter:description" content="A singular hypercar, imagined in Torino and made by hand.">
+  <meta name="twitter:image" content="https://aurelion.example/public/aurelion-hero.jpg">
+  <link rel="icon" type="image/svg+xml" href="public/aurelion-mark.svg">
+  <title>AURELION — инженерия, ставшая искусством</title>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"AURELION","url":"https://aurelion.example/","logo":"https://aurelion.example/public/aurelion-mark.svg","description":"Fictional independent hypercar marque, imagined in Torino for a design concept."}
+  </script>
+  <style>
+    :root {
+      --ink: #11171b;
+      --night: #0b1117;
+      --night-2: #111c25;
+      --paper: #f1efe9;
+      --paper-2: #e8e5de;
+      --white: #f7f6f2;
+      --muted: #9a9d9c;
+      --gold: #c1a678;
+      --gold-dark: #90774f;
+      --line: rgba(255,255,255,.18);
+      --line-dark: rgba(17,23,27,.16);
+      --serif: "Iowan Old Style", "Baskerville", "Palatino Linotype", Georgia, serif;
+      --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --page-gutter: clamp(22px, 6.1vw, 100px);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    body, button, input, select { font-family: var(--sans); }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; text-decoration: none; }
+    button { color: inherit; }
+    img { display: block; max-width: 100%; }
+    ::selection { background: var(--gold); color: var(--night); }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+    .container { width: min(100%, 1600px); margin-inline: auto; padding-inline: var(--page-gutter); }
+    .eyebrow { display: flex; align-items: center; gap: 12px; margin: 0; color: var(--gold); font-size: 10px; font-weight: 600; letter-spacing: .2em; line-height: 1.5; text-transform: uppercase; }
+    .eyebrow::before { content: ""; display: inline-block; width: 28px; height: 1px; background: currentColor; }
+    .eyebrow.dark { color: var(--gold-dark); }
+    .small-label { font-size: 9px; font-weight: 600; letter-spacing: .19em; text-transform: uppercase; }
+    .sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0,0,0,0) !important; white-space: nowrap !important; border: 0 !important; }
+    .arrow-link { display: inline-flex; align-items: center; gap: 15px; min-height: 48px; border-bottom: 1px solid currentColor; color: inherit; font-size: 10px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; transition: gap .25s ease, color .25s ease; }
+    button.arrow-link { border-top: 0; border-right: 0; border-left: 0; background: transparent; cursor: pointer; }
+    .arrow-link svg { width: 14px; height: 14px; transition: transform .25s ease; }
+    .arrow-link:hover { gap: 22px; color: var(--gold); }
+    .arrow-link:hover svg { transform: translate(2px,-2px); }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 17px; min-height: 54px; padding: 0 23px; border: 1px solid transparent; background: var(--gold); color: var(--night); cursor: pointer; font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease; }
+    .button:hover { transform: translateY(-2px); background: #d0b78c; }
+    .button svg { width: 15px; height: 15px; }
+    .button-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,.48); }
+    .button-outline:hover { background: var(--white); border-color: var(--white); color: var(--night); }
+    .button-dark { background: var(--night); color: var(--white); }
+    .button-dark:hover { background: #253541; }
+
+    /* Header */
+    .site-header { position: fixed; z-index: 30; inset: 0 0 auto; color: var(--white); transition: background .35s ease, border-color .35s ease; border-bottom: 1px solid transparent; }
+    .site-header.is-scrolled { background: rgba(9,15,20,.88); border-color: rgba(255,255,255,.1); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    .header-inner { height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding-inline: var(--page-gutter); }
+    .brand { display: inline-flex; align-items: center; gap: 11px; flex: 0 0 auto; color: #fff; }
+    .brand-mark { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid rgba(193,166,120,.82); border-radius: 50%; color: var(--gold); }
+    .brand-mark svg { width: 18px; height: 18px; }
+    .brand-name { font-size: 15px; font-weight: 500; letter-spacing: .31em; line-height: 1; }
+    .brand-name small { display: block; margin-top: 6px; color: rgba(255,255,255,.58); font-size: 6px; font-weight: 500; letter-spacing: .39em; text-align: justify; }
+    .main-nav { display: flex; align-items: center; gap: clamp(22px, 3.4vw, 55px); margin-left: auto; }
+    .main-nav a, .header-cta, .language-toggle { color: rgba(255,255,255,.76); font-size: 9px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; transition: color .2s ease; }
+    .main-nav a { position: relative; padding-block: 10px; }
+    .main-nav a::after { position: absolute; inset: auto 0 3px; height: 1px; background: var(--gold); content: ""; transform: scaleX(0); transform-origin: right; transition: transform .25s ease; }
+    .main-nav a:hover, .header-cta:hover, .language-toggle:hover { color: #fff; }
+    .main-nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+    .header-actions { display: flex; align-items: center; gap: clamp(17px, 2.5vw, 38px); flex: 0 0 auto; }
+    .language-toggle { border: 0; padding: 8px 0; background: none; cursor: pointer; }
+    .language-toggle span { padding-inline: 5px; color: var(--gold); }
+    .header-cta { display: inline-flex; align-items: center; gap: 9px; border-bottom: 1px solid rgba(255,255,255,.48); padding-block: 8px; }
+    .header-cta svg { width: 12px; height: 12px; color: var(--gold); }
+    .menu-toggle { display: none; width: 42px; height: 42px; padding: 10px; border: 1px solid rgba(255,255,255,.22); background: transparent; color: white; cursor: pointer; }
+    .menu-toggle span { display: block; height: 1px; margin: 5px 0; background: currentColor; transition: transform .2s ease; }
+
+    /* Hero */
+    .hero { position: relative; display: flex; min-height: max(760px, 100svh); overflow: hidden; align-items: stretch; background: #101922; color: var(--white); }
+    .hero-image { position: absolute; inset: 0; background-image: url("public/aurelion-hero.jpg"); background-position: center 53%; background-size: cover; transform: scale(1.015); animation: heroReveal 1.4s cubic-bezier(.2,.7,.2,1) both; }
+    .hero::before { position: absolute; z-index: 1; inset: 0; content: ""; background: linear-gradient(90deg, rgba(7,13,18,.81) 0%, rgba(7,13,18,.53) 34%, rgba(7,13,18,.05) 73%), linear-gradient(0deg, rgba(5,10,14,.8) 0%, transparent 34%, rgba(5,10,14,.22) 100%); }
+    .hero::after { position: absolute; z-index: 1; inset: 0; content: ""; pointer-events: none; background: radial-gradient(ellipse at 65% 54%, transparent 15%, rgba(4,10,15,.14) 100%); }
+    .hero-inner { position: relative; z-index: 2; display: flex; flex: 1; flex-direction: column; justify-content: center; padding-top: 118px; padding-bottom: 150px; }
+    .hero-copy { max-width: 690px; padding-top: 18px; }
+    .hero-kicker { margin-bottom: 28px; }
+    .hero-micro { margin: 0 0 17px 41px; color: rgba(255,255,255,.58); font-size: 9px; letter-spacing: .26em; text-transform: uppercase; }
+    .hero h1 { max-width: 780px; margin: 0; font-family: var(--serif); font-size: clamp(56px, 7vw, 106px); font-weight: 400; letter-spacing: -.055em; line-height: .98; }
+    .hero h1 span, .hero h1 em { display: block; }
+    .hero h1 em { margin-left: .38em; color: #d7c5a5; font-weight: 400; }
+    .hero-description { max-width: 355px; margin: 27px 0 29px 4px; color: rgba(246,245,241,.73); font-size: 13px; font-weight: 300; line-height: 1.85; }
+    .hero-actions { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
+    .hero-actions .button { min-width: 218px; }
+    .hero-bottom { position: absolute; right: var(--page-gutter); bottom: 38px; left: var(--page-gutter); display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; }
+    .scroll-cue { display: inline-flex; align-items: center; gap: 13px; color: rgba(255,255,255,.66); font-size: 8px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+    .scroll-cue i { display: block; width: 1px; height: 42px; background: linear-gradient(var(--gold), rgba(193,166,120,0)); }
+    .hero-facts { display: flex; align-items: flex-start; gap: clamp(26px, 4.4vw, 72px); }
+    .hero-fact { min-width: 100px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.37); }
+    .hero-fact strong { display: block; color: #f7f5ef; font-family: var(--serif); font-size: clamp(20px, 2.2vw, 31px); font-weight: 400; letter-spacing: -.035em; white-space: nowrap; }
+    .hero-fact span { display: block; margin-top: 6px; color: rgba(255,255,255,.57); font-size: 8px; letter-spacing: .15em; text-transform: uppercase; }
+    .hero-index { position: absolute; right: var(--page-gutter); top: 49%; writing-mode: vertical-rl; color: rgba(255,255,255,.43); font-size: 8px; letter-spacing: .24em; text-transform: uppercase; }
+    @keyframes heroReveal { from { opacity: .25; transform: scale(1.06); } to { opacity: 1; transform: scale(1.015); } }
+
+    /* Philosophy */
+    .philosophy { position: relative; overflow: hidden; padding-block: clamp(95px, 13vw, 190px) clamp(90px, 10vw, 145px); background: var(--paper); }
+    .philosophy::after { position: absolute; right: -120px; bottom: -190px; width: 480px; height: 480px; border: 1px solid rgba(144,119,79,.16); border-radius: 50%; content: ""; box-shadow: 0 0 0 32px rgba(144,119,79,.025), 0 0 0 64px rgba(144,119,79,.022), 0 0 0 96px rgba(144,119,79,.018); }
+    .philosophy-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(180px, .72fr) 2fr; gap: 5vw; }
+    .philosophy-aside { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; }
+    .section-index { margin: 2px 0 0; color: #787a76; font-size: 9px; font-weight: 600; letter-spacing: .19em; text-transform: uppercase; }
+    .seal { display: grid; width: 68px; height: 68px; margin-top: 55px; place-items: center; border: 1px solid rgba(144,119,79,.45); border-radius: 50%; color: var(--gold-dark); }
+    .seal svg { width: 29px; height: 29px; }
+    .philosophy-copy h2 { max-width: 900px; margin: 0; font-family: var(--serif); font-size: clamp(42px, 6.2vw, 88px); font-weight: 400; letter-spacing: -.055em; line-height: 1.05; }
+    .philosophy-copy h2 em { color: var(--gold-dark); font-weight: 400; }
+    .philosophy-bottom { display: flex; justify-content: space-between; gap: 35px; align-items: flex-end; margin-top: clamp(35px, 5vw, 72px); }
+    .philosophy-bottom p { max-width: 430px; margin: 0; color: #626661; font-size: 13px; line-height: 1.9; }
+    .philosophy-signature { color: #6a6c67; font-family: var(--serif); font-size: 18px; font-style: italic; white-space: nowrap; }
+    .principles { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; margin-top: clamp(66px, 9vw, 122px); border-top: 1px solid var(--line-dark); }
+    .principle { padding: 19px 16px 0 0; color: #656761; font-size: 9px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+    .principle + .principle { padding-left: 22px; border-left: 1px solid var(--line-dark); }
+    .principle span { display: block; margin-bottom: 11px; color: var(--gold-dark); font-family: var(--serif); font-size: 15px; font-weight: 400; letter-spacing: 0; }
+
+    /* Brand story */
+    .heritage { position: relative; overflow: hidden; padding-block: clamp(85px, 10vw, 140px); background: var(--paper-2); }
+    .heritage-head { display: grid; grid-template-columns: 1.15fr .85fr; align-items: end; gap: 7vw; }
+    .heritage-head h2 { max-width: 720px; margin: 24px 0 0; font-family: var(--serif); font-size: clamp(42px, 5.4vw, 76px); font-weight: 400; letter-spacing: -.055em; line-height: 1.03; }
+    .heritage-head h2 em { color: var(--gold-dark); font-weight: 400; }
+    .heritage-intro { max-width: 390px; margin: 0 0 5px; color: #696c67; font-size: 12px; line-height: 1.85; }
+    .timeline { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: clamp(56px, 8vw, 106px); border-top: 1px solid var(--line-dark); }
+    .timeline-item { position: relative; min-height: 178px; padding: 25px 24px 0 0; }
+    .timeline-item + .timeline-item { padding-left: 22px; border-left: 1px solid var(--line-dark); }
+    .timeline-item::before { position: absolute; top: -4px; left: 0; width: 7px; height: 7px; border: 1px solid var(--gold-dark); border-radius: 50%; background: var(--paper-2); content: ""; }
+    .timeline-item + .timeline-item::before { left: -4px; }
+    .timeline-year { display: block; margin-bottom: 22px; color: var(--gold-dark); font-family: var(--serif); font-size: 27px; line-height: 1; }
+    .timeline-item h3 { margin: 0 0 9px; font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .timeline-item p { max-width: 235px; margin: 0; color: #737570; font-size: 10px; line-height: 1.7; }
+    .timeline-item:last-child .timeline-year { color: var(--ink); }
+
+    /* Model */
+    .model { padding-block: clamp(92px, 10vw, 145px) clamp(82px, 9vw, 130px); overflow: hidden; background: var(--night); color: var(--white); }
+    .model-head { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 36px; margin-bottom: 42px; }
+    .model-title-wrap .eyebrow { margin-bottom: 20px; }
+    .model-title { margin: 0; font-family: var(--serif); font-size: clamp(58px, 9.3vw, 135px); font-weight: 400; letter-spacing: -.07em; line-height: .82; }
+    .model-title small { display: inline-block; margin-left: .18em; color: var(--gold); font-family: var(--sans); font-size: .22em; font-weight: 300; letter-spacing: .1em; vertical-align: top; }
+    .model-lead { max-width: 380px; justify-self: end; margin: 0 0 4px; color: rgba(255,255,255,.64); font-size: 13px; line-height: 1.85; }
+    .model-visual { position: relative; min-height: 300px; aspect-ratio: 2.05 / 1; overflow: hidden; margin: 0; background: #17232b; }
+    .model-visual img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; object-position: center 56%; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+    .model-visual:hover img { transform: scale(1.025); }
+    .model-visual::after { position: absolute; inset: 0; content: ""; background: linear-gradient(0deg, rgba(5,10,14,.62), transparent 48%), linear-gradient(90deg, rgba(8,14,19,.2), transparent 60%); pointer-events: none; }
+    .visual-caption { position: absolute; z-index: 1; right: 30px; bottom: 28px; display: flex; align-items: flex-end; gap: 20px; color: #fff; }
+    .visual-caption span { max-width: 190px; font-family: var(--serif); font-size: 20px; font-style: italic; line-height: 1.15; }
+    .visual-caption i { width: 42px; height: 1px; margin-bottom: 5px; background: var(--gold); }
+    .visual-tag { position: absolute; z-index: 1; left: 29px; top: 27px; color: rgba(255,255,255,.77); font-size: 8px; letter-spacing: .2em; text-transform: uppercase; writing-mode: vertical-rl; }
+    .hotspot { position: absolute; z-index: 3; left: var(--x); top: var(--y); display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid rgba(255,255,255,.82); border-radius: 50%; background: rgba(11,17,23,.55); color: #fff; cursor: pointer; backdrop-filter: blur(7px); transition: background .2s ease, transform .2s ease; }
+    .hotspot::before, .hotspot::after { position: absolute; inset: 7px; border: 1px solid var(--gold); border-radius: 50%; content: ""; }
+    .hotspot::after { inset: -5px; border-color: rgba(193,166,120,.48); animation: hotspotPulse 2.8s ease-out infinite; }
+    .hotspot:hover, .hotspot[aria-expanded="true"] { z-index: 4; transform: scale(1.08); background: var(--gold-dark); }
+    .hotspot span { font-family: var(--serif); font-size: 12px; }
+    @keyframes hotspotPulse { 0% { opacity: .72; transform: scale(.75); } 100% { opacity: 0; transform: scale(1.35); } }
+    .detail-card { position: absolute; z-index: 5; left: 28px; bottom: 28px; width: min(345px, calc(100% - 56px)); padding: 23px 25px 22px; border: 1px solid rgba(193,166,120,.46); background: rgba(10,16,21,.92); color: #fff; opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .24s ease, visibility .24s ease, transform .24s ease; backdrop-filter: blur(14px); }
+    .detail-card.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+    .detail-card .small-label { color: var(--gold); }
+    .detail-card h3 { margin: 10px 25px 8px 0; font-family: var(--serif); font-size: 24px; font-weight: 400; }
+    .detail-card p { margin: 0; color: rgba(255,255,255,.66); font-size: 10px; line-height: 1.75; }
+    .detail-close { position: absolute; top: 13px; right: 13px; display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid rgba(255,255,255,.26); background: transparent; color: #fff; cursor: pointer; }
+    .detail-close svg { width: 12px; height: 12px; }
+    .model-data { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 46px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .model-stat { padding: 26px 15px 29px 0; }
+    .model-stat + .model-stat { padding-left: 25px; border-left: 1px solid var(--line); }
+    .model-stat strong { display: block; font-family: var(--serif); font-size: clamp(24px, 3vw, 39px); font-weight: 400; letter-spacing: -.04em; }
+    .model-stat span { display: block; margin-top: 9px; color: rgba(255,255,255,.5); font-size: 8px; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; }
+    .model-footer { display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-top: 28px; }
+    .model-footer p { margin: 0; color: rgba(255,255,255,.42); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+
+    /* Bespoke configurator */
+    .configurator { padding-block: clamp(88px, 10vw, 142px); background: var(--paper); }
+    .configurator-head { display: grid; grid-template-columns: 1fr .82fr; align-items: end; gap: 6vw; margin-bottom: clamp(34px, 5vw, 62px); }
+    .configurator-head h2 { margin: 21px 0 0; font-family: var(--serif); font-size: clamp(43px, 5.4vw, 75px); font-weight: 400; letter-spacing: -.055em; line-height: 1.02; }
+    .configurator-head h2 em { color: var(--gold-dark); font-weight: 400; }
+    .configurator-head > p { max-width: 385px; margin: 0 0 5px; color: #6c6f69; font-size: 12px; line-height: 1.85; }
+    .configurator-layout { display: grid; grid-template-columns: 1.18fr .82fr; align-items: stretch; gap: clamp(25px, 4vw, 58px); }
+    .config-stage { position: relative; min-height: 500px; aspect-ratio: 1.32 / 1; overflow: hidden; background: #101820; }
+    .config-stage::after { position: absolute; inset: 0; content: ""; pointer-events: none; background: linear-gradient(0deg, rgba(7,13,18,.72), transparent 45%), linear-gradient(90deg, rgba(7,13,18,.28), transparent 62%); }
+    .config-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 65% center; transition: opacity .28s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+    .config-stage img.is-changing { opacity: .25; transform: scale(1.025); }
+    .config-stage-top, .config-stage-bottom { position: absolute; z-index: 1; right: 24px; left: 24px; display: flex; justify-content: space-between; gap: 14px; color: #fff; }
+    .config-stage-top { top: 24px; align-items: flex-start; }
+    .config-stage-bottom { bottom: 23px; align-items: flex-end; }
+    .config-stage-top span, .config-stage-bottom small { color: rgba(255,255,255,.65); font-size: 8px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+    .config-stage-top strong { font-size: 8px; font-weight: 600; letter-spacing: .17em; }
+    .config-stage-bottom strong { display: block; margin-top: 6px; font-family: var(--serif); font-size: 23px; font-weight: 400; }
+    .config-stage-bottom small { align-self: flex-end; }
+    .config-controls { padding: clamp(22px, 3vw, 38px); background: #e8e5de; }
+    .config-control-head { display: flex; align-items: baseline; justify-content: space-between; gap: 15px; margin-bottom: 16px; }
+    .config-control-head h3 { margin: 0; font-size: 9px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .config-control-head span { color: var(--gold-dark); font-family: var(--serif); font-size: 14px; }
+    .config-group { padding-block: 17px 18px; border-top: 1px solid rgba(17,23,27,.16); }
+    .paint-options { display: grid; grid-template-columns: repeat(3,1fr); gap: 9px; }
+    .paint-option { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; padding: 9px; border: 1px solid transparent; background: rgba(255,255,255,.26); color: #2a2d2b; cursor: pointer; text-align: left; transition: border-color .2s ease, background .2s ease; }
+    .paint-option:hover, .paint-option[aria-pressed="true"] { border-color: var(--gold-dark); background: rgba(255,255,255,.65); }
+    .paint-swatch { display: block; width: 24px; height: 24px; border: 1px solid rgba(0,0,0,.16); border-radius: 50%; box-shadow: inset 0 0 0 2px rgba(255,255,255,.25); }
+    .paint-option b { display: block; font-size: 8px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .paint-option small { display: block; margin-top: 3px; color: #777972; font-size: 7px; letter-spacing: .06em; }
+    .material-options { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+    .material-option { display: flex; min-height: 66px; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 9px; border: 1px solid transparent; background: rgba(255,255,255,.27); color: #282b29; cursor: pointer; text-align: left; transition: border-color .2s ease, background .2s ease; }
+    .material-option:hover, .material-option[aria-pressed="true"] { border-color: var(--gold-dark); background: rgba(255,255,255,.7); }
+    .material-chip { width: 100%; height: 17px; border: 1px solid rgba(0,0,0,.12); background-color: #17191a; background-image: repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 1px,transparent 1px 4px); }
+    .material-chip.sabbia { background-color: #98755a; }
+    .material-chip.blu { background-color: #263a47; }
+    .material-option b { font-size: 7px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .wheel-options { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+    .wheel-option { display: flex; align-items: center; gap: 12px; min-height: 57px; padding: 9px 11px; border: 1px solid transparent; background: rgba(255,255,255,.27); color: #2a2d2b; cursor: pointer; text-align: left; transition: border-color .2s ease, background .2s ease; }
+    .wheel-option:hover, .wheel-option[aria-pressed="true"] { border-color: var(--gold-dark); background: rgba(255,255,255,.7); }
+    .wheel-graphic { width: 32px; height: 32px; flex: 0 0 auto; color: #555b5b; }
+    .wheel-option b { display: block; font-size: 7px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .wheel-option small { display: block; margin-top: 3px; color: #777972; font-size: 7px; }
+    .build-summary { margin-top: 18px; padding: 17px 18px; background: #121c24; color: #fff; }
+    .build-summary-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .build-summary-top span { color: var(--gold); font-size: 7px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    .build-summary-top code { color: rgba(255,255,255,.65); font-family: var(--sans); font-size: 8px; letter-spacing: .09em; }
+    .build-summary p { margin: 12px 0 0; color: rgba(255,255,255,.72); font-size: 9px; line-height: 1.65; }
+    .config-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 12px; }
+    .config-actions button { min-height: 40px; padding: 0 8px; border: 1px solid rgba(17,23,27,.3); background: transparent; color: var(--ink); cursor: pointer; font-size: 7px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; transition: background .2s ease, color .2s ease; }
+    .config-actions button:hover { background: var(--night); color: #fff; }
+    .config-inquire { width: 100%; margin-top: 10px; }
+    .config-status { min-height: 18px; margin: 10px 0 0; color: var(--gold-dark); font-size: 9px; line-height: 1.5; overflow-wrap: anywhere; }
+    .config-brochure { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 10px; padding-block: 11px 0; border-top: 1px solid rgba(17,23,27,.15); color: #5d615d; font-size: 8px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+    .config-brochure svg { width: 13px; height: 13px; color: var(--gold-dark); }
+
+    /* Engineering */
+    .engineering { position: relative; min-height: 720px; overflow: hidden; padding-block: clamp(98px, 11vw, 158px); background: #101a22; color: var(--white); }
+    .engineering-backdrop { position: absolute; inset: 0 0 0 30%; overflow: hidden; }
+    .engineering-backdrop img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .engineering-backdrop::after { position: absolute; inset: 0; content: ""; background: linear-gradient(90deg, #101a22 0%, rgba(16,26,34,.94) 14%, rgba(16,26,34,.72) 35%, rgba(16,26,34,.08) 74%, rgba(16,26,34,.2) 100%), linear-gradient(0deg, rgba(5,10,14,.64), transparent 55%); }
+    .engineering-inner { position: relative; z-index: 1; }
+    .engineering-copy { max-width: 650px; }
+    .engineering-copy h2 { margin: 25px 0 19px; font-family: var(--serif); font-size: clamp(43px, 5.4vw, 75px); font-weight: 400; letter-spacing: -.055em; line-height: 1.02; }
+    .engineering-copy h2 em { color: var(--gold); font-weight: 400; }
+    .engineering-intro { max-width: 455px; margin: 0; color: rgba(255,255,255,.65); font-size: 12px; line-height: 1.85; }
+    .engineering-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; max-width: 480px; margin-top: 30px; padding-block: 17px 19px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .engineering-stat strong { display: block; font-family: var(--serif); font-size: clamp(21px, 2.4vw, 31px); font-weight: 400; letter-spacing: -.04em; white-space: nowrap; }
+    .engineering-stat span { display: block; margin-top: 6px; color: rgba(255,255,255,.49); font-size: 7px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
+    .mode-module { max-width: 535px; margin-top: 36px; }
+    .mode-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; }
+    .mode-top .small-label { color: var(--gold); }
+    .mode-top h3 { margin: 12px 0 0; font-family: var(--serif); font-size: clamp(28px, 3.2vw, 41px); font-weight: 400; letter-spacing: -.04em; line-height: 1.05; }
+    .mode-top h3 em { color: #d4c3a4; font-weight: 400; }
+    .mode-count { padding-bottom: 5px; color: rgba(255,255,255,.48); font-size: 9px; letter-spacing: .17em; }
+    .mode-count strong { color: var(--gold); font-family: var(--serif); font-size: 19px; font-weight: 400; }
+    .mode-tabs { display: grid; grid-template-columns: repeat(3,1fr); margin-top: 24px; border-bottom: 1px solid rgba(255,255,255,.25); }
+    .mode-tab { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 9px 10px 11px 0; border: 0; border-bottom: 1px solid transparent; margin-bottom: -1px; background: transparent; color: rgba(255,255,255,.49); cursor: pointer; text-align: left; transition: color .2s ease, border-color .2s ease; }
+    .mode-tab span { color: var(--gold); font-family: var(--serif); font-size: 12px; }
+    .mode-tab b { font-size: 8px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+    .mode-tab:hover, .mode-tab[aria-selected="true"] { border-color: var(--gold); color: #fff; }
+    .mode-panel { display: grid; grid-template-columns: 125px 1fr; gap: 15px; min-height: 92px; padding-top: 18px; }
+    .mode-name { margin: 0; color: #e5d6bb; font-family: var(--serif); font-size: 17px; font-style: italic; }
+    .mode-description { max-width: 360px; margin: 0; color: rgba(255,255,255,.57); font-size: 10px; line-height: 1.75; }
+
+    /* Atelier */
+    .atelier { padding-block: clamp(95px, 11vw, 160px); background: var(--paper); }
+    .atelier-grid { display: grid; grid-template-columns: 1.03fr .97fr; align-items: center; gap: clamp(48px, 9vw, 138px); }
+    .atelier-visual { position: relative; min-height: 450px; aspect-ratio: .9 / 1; margin: 0; background: #131d24; }
+    .atelier-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .atelier-image-note { position: absolute; right: 0; bottom: 0; display: flex; align-items: center; gap: 13px; padding: 18px 21px; background: var(--paper); color: var(--ink); font-size: 8px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+    .atelier-image-note span { color: var(--gold-dark); font-family: var(--serif); font-size: 18px; font-weight: 400; letter-spacing: 0; }
+    .atelier-copy { padding-block: 12px; }
+    .atelier-copy h2 { max-width: 530px; margin: 27px 0 23px; font-family: var(--serif); font-size: clamp(42px, 5.1vw, 70px); font-weight: 400; letter-spacing: -.055em; line-height: 1.04; }
+    .atelier-copy h2 em { color: var(--gold-dark); font-weight: 400; }
+    .atelier-copy > p { max-width: 450px; margin: 0; color: #6b6d68; font-size: 13px; line-height: 1.9; }
+    .craft-list { margin: 37px 0 34px; border-top: 1px solid var(--line-dark); }
+    .craft-item { display: grid; grid-template-columns: 39px 1fr; gap: 14px; padding: 17px 0 16px; border-bottom: 1px solid var(--line-dark); }
+    .craft-item > span { padding-top: 3px; color: var(--gold-dark); font-family: var(--serif); font-size: 15px; }
+    .craft-item strong { display: block; margin-bottom: 5px; font-size: 10px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+    .craft-item p { margin: 0; color: #777a74; font-size: 11px; line-height: 1.65; }
+
+    /* Limited */
+    .limited { position: relative; overflow: hidden; padding-block: clamp(86px, 10vw, 145px); background: linear-gradient(112deg, #101a22 0%, #111f29 52%, #172633 100%); color: var(--white); }
+    .limited::before { position: absolute; right: 10%; top: -50%; width: min(62vw, 760px); aspect-ratio: 1; border: 1px solid rgba(193,166,120,.12); border-radius: 50%; content: ""; box-shadow: 0 0 0 42px rgba(193,166,120,.02), 0 0 0 84px rgba(193,166,120,.018), 0 0 0 126px rgba(193,166,120,.014); }
+    .limited-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 7vw; }
+    .limited-number { position: relative; display: flex; align-items: center; justify-content: center; min-height: 330px; color: #d3c1a1; font-family: var(--serif); font-size: clamp(170px, 27vw, 370px); font-weight: 400; letter-spacing: -.1em; line-height: .7; }
+    .limited-number::after { position: absolute; width: min(65%, 310px); aspect-ratio: 1; border: 1px solid rgba(193,166,120,.31); border-radius: 50%; content: ""; }
+    .limited-number small { align-self: flex-end; margin: 0 0 17% 12px; color: var(--gold); font-family: var(--sans); font-size: 12px; letter-spacing: .2em; }
+    .limited-copy { max-width: 530px; padding-block: 24px; }
+    .limited-copy h2 { margin: 25px 0 20px; font-family: var(--serif); font-size: clamp(40px, 5.2vw, 72px); font-weight: 400; letter-spacing: -.055em; line-height: 1.04; }
+    .limited-copy h2 em { color: var(--gold); font-weight: 400; }
+    .limited-copy p { max-width: 430px; margin: 0 0 30px; color: rgba(255,255,255,.63); font-size: 13px; line-height: 1.85; }
+    .limited-copy .small-label { display: block; margin-top: 27px; color: rgba(255,255,255,.42); }
+
+    /* Footer */
+    .footer { background: #0a0f13; color: var(--white); }
+    .footer-cta { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; padding-block: clamp(75px, 9vw, 127px); border-bottom: 1px solid rgba(255,255,255,.12); }
+    .footer-cta-copy { max-width: 690px; }
+    .footer-cta h2 { margin: 24px 0 0; font-family: var(--serif); font-size: clamp(40px, 6vw, 82px); font-weight: 400; letter-spacing: -.055em; line-height: 1.02; }
+    .footer-cta h2 em { color: var(--gold); font-weight: 400; }
+    .footer-cta .button { flex: 0 0 auto; }
+    .footer-cta-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; flex: 0 0 auto; }
+    .model-footer-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 25px; }
+    .footer-main { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 50px; padding-block: 43px 48px; }
+    .footer-note { max-width: 250px; margin: 18px 0 0; color: rgba(255,255,255,.4); font-size: 10px; line-height: 1.8; }
+    .footer-col h3 { margin: 0 0 17px; color: rgba(255,255,255,.46); font-size: 8px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+    .footer-col a, .footer-col p { display: block; margin: 0 0 10px; color: rgba(255,255,255,.78); font-size: 10px; letter-spacing: .04em; }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding-block: 15px 22px; border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.37); font-size: 8px; letter-spacing: .12em; text-transform: uppercase; }
+    .footer-bottom a { color: rgba(255,255,255,.55); }
+    .footer-fiction-note { color: rgba(255,255,255,.28); font-size: 7px; letter-spacing: .1em; text-transform: uppercase; }
+
+    /* Contact dialog */
+    .contact-dialog { width: min(530px, calc(100% - 32px)); max-width: none; max-height: calc(100% - 32px); padding: 0; overflow: auto; border: 1px solid rgba(193,166,120,.5); background: var(--paper); color: var(--ink); box-shadow: 0 25px 90px rgba(0,0,0,.45); }
+    .contact-dialog::backdrop { background: rgba(3,8,12,.75); backdrop-filter: blur(5px); }
+    .dialog-inner { position: relative; padding: clamp(28px, 6vw, 52px); }
+    .dialog-close { position: absolute; top: 18px; right: 18px; display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid var(--line-dark); background: transparent; cursor: pointer; }
+    .dialog-close svg { width: 15px; height: 15px; }
+    .dialog-inner h2 { margin: 22px 0 12px; font-family: var(--serif); font-size: 46px; font-weight: 400; letter-spacing: -.05em; line-height: 1; }
+    .dialog-inner > p { margin: 0 0 26px; color: #6c706b; font-size: 12px; line-height: 1.75; }
+    .form-field { display: block; margin-bottom: 17px; }
+    .form-field span { display: block; margin-bottom: 8px; color: #777a74; font-size: 8px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .form-field input, .form-field select { width: 100%; min-height: 47px; padding: 0 12px; border: 1px solid rgba(17,23,27,.22); border-radius: 0; background: rgba(255,255,255,.4); color: var(--ink); font-size: 12px; }
+    .form-field input:focus, .form-field select:focus { outline: 1px solid var(--gold-dark); border-color: var(--gold-dark); }
+    .contact-dialog form .button { width: 100%; margin-top: 5px; }
+    .form-config-summary { margin: 0 0 18px; padding: 12px 14px; border-left: 2px solid var(--gold-dark); background: rgba(193,166,120,.1); color: #656861; font-size: 10px; line-height: 1.65; }
+    .form-config-summary[hidden] { display: none; }
+    .form-demo-note { margin: 14px 0 2px; color: #898b85; font-size: 8px; line-height: 1.6; }
+    .form-success { padding-block: 18px 10px; }
+    .form-success[hidden] { display: none; }
+    .form-success-mark { display: grid; width: 48px; height: 48px; place-items: center; border: 1px solid var(--gold-dark); border-radius: 50%; color: var(--gold-dark); }
+    .form-success-mark svg { width: 22px; height: 22px; }
+    .form-success h3 { margin: 22px 0 9px; font-family: var(--serif); font-size: 36px; font-weight: 400; }
+    .form-success p { margin: 0; color: #6c706b; font-size: 12px; line-height: 1.7; }
+
+    .scroll-progress { position: fixed; z-index: 40; top: 0; left: 0; height: 2px; width: 0; background: var(--gold); pointer-events: none; }
+    .reveal { transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+    .js-ready .reveal:not(.in-view) { opacity: 0; transform: translateY(22px); }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .js-ready .reveal:not(.in-view) { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 980px) {
+      .header-inner { height: 74px; gap: 20px; }
+      .main-nav { gap: 22px; }
+      .main-nav a, .header-cta, .language-toggle { font-size: 8px; }
+      .hero { min-height: 780px; }
+      .hero h1 { font-size: clamp(58px, 8vw, 82px); }
+      .philosophy-grid { grid-template-columns: 155px 1fr; gap: 32px; }
+      .atelier-grid { gap: 6vw; }
+      .footer-cta { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 760px) {
+      :root { --page-gutter: 24px; }
+      html { scroll-padding-top: 76px; }
+      .header-inner { height: 72px; }
+      .brand-name { font-size: 13px; }
+      .brand-mark { width: 27px; height: 27px; }
+      .main-nav { position: absolute; top: calc(100% + 1px); right: 14px; left: 14px; display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: 10px 20px 17px; background: rgba(9,15,20,.97); border: 1px solid rgba(255,255,255,.12); opacity: 0; visibility: hidden; transform: translateY(-7px); transition: opacity .22s ease, visibility .22s ease, transform .22s ease; }
+      .main-nav.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+      .main-nav a { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.1); font-size: 9px; }
+      .main-nav a:last-child { border-bottom: 0; }
+      .main-nav a::after { display: none; }
+      .header-actions { gap: 17px; }
+      .header-cta { display: none; }
+      .menu-toggle { display: block; }
+      .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3px) rotate(45deg); }
+      .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3px) rotate(-45deg); }
+      .hero { min-height: max(760px, 100svh); }
+      .hero-image { background-position: 60% center; }
+      .hero::before { background: linear-gradient(90deg, rgba(7,13,18,.78) 0%, rgba(7,13,18,.45) 62%, rgba(7,13,18,.1) 100%), linear-gradient(0deg, rgba(5,10,14,.86) 0%, transparent 48%, rgba(5,10,14,.24) 100%); }
+      .hero-inner { justify-content: flex-start; padding-top: 155px; padding-bottom: 245px; }
+      .hero-copy { max-width: 100%; }
+      .hero h1 { font-size: clamp(53px, 12vw, 80px); }
+      .hero-description { max-width: 300px; margin-top: 23px; }
+      .hero-index { display: none; }
+      .hero-bottom { bottom: 26px; flex-direction: column-reverse; align-items: stretch; gap: 23px; }
+      .hero-facts { justify-content: space-between; gap: 14px; }
+      .hero-fact { min-width: 0; flex: 1; }
+      .hero-fact strong { font-size: clamp(19px, 5.2vw, 27px); }
+      .hero-fact span { font-size: 7px; letter-spacing: .1em; }
+      .scroll-cue { align-self: flex-start; }
+      .scroll-cue i { height: 22px; }
+      .philosophy-grid { grid-template-columns: 1fr; gap: 35px; }
+      .philosophy-aside { flex-direction: row; align-items: center; }
+      .heritage-head { grid-template-columns: 1fr; gap: 20px; }
+      .heritage-head h2 { font-size: clamp(43px, 10.6vw, 69px); }
+      .timeline { grid-template-columns: 1fr; gap: 0; margin: 44px 0 0 4px; border-top: 0; border-left: 1px solid var(--line-dark); }
+      .timeline-item, .timeline-item + .timeline-item { min-height: 0; padding: 0 0 31px 24px; border-left: 0; }
+      .timeline-item::before, .timeline-item + .timeline-item::before { top: 4px; left: -4px; }
+      .timeline-year { margin-bottom: 10px; font-size: 23px; }
+      .timeline-item p { max-width: 390px; }
+      .detail-card { left: 12px; bottom: 12px; width: calc(100% - 24px); padding: 16px 18px; }
+      .hotspot { width: 31px; height: 31px; }
+      .hotspot[data-detail="aero"] { left: 56%; top: 52%; }
+      .hotspot[data-detail="cockpit"] { left: 44%; top: 61%; }
+      .hotspot[data-detail="chassis"] { left: 66%; top: 70%; }
+      .configurator-head { grid-template-columns: 1fr; gap: 20px; }
+      .configurator-head h2 { font-size: clamp(43px, 10.5vw, 68px); }
+      .configurator-layout { grid-template-columns: 1fr; gap: 15px; }
+      .config-stage { min-height: 345px; aspect-ratio: 1.12 / 1; }
+      .config-stage img { object-position: 65% center; }
+      .config-controls { padding: 22px; }
+      .seal { width: 49px; height: 49px; margin: 0; }
+      .seal svg { width: 23px; height: 23px; }
+      .philosophy-copy h2 { font-size: clamp(43px, 10.7vw, 69px); }
+      .philosophy-bottom { flex-direction: column; align-items: flex-start; }
+      .principles { margin-top: 58px; }
+      .principle { padding-right: 8px; font-size: 7px; letter-spacing: .12em; }
+      .principle + .principle { padding-left: 10px; }
+      .model-head { grid-template-columns: 1fr; gap: 20px; }
+      .model-title { font-size: clamp(64px, 16vw, 110px); }
+      .model-lead { justify-self: start; }
+      .model-visual { min-height: 365px; aspect-ratio: .84 / 1; }
+      .model-visual img { min-height: 365px; object-position: 56% center; }
+      .visual-caption { right: 18px; bottom: 19px; }
+      .visual-caption span { font-size: 17px; }
+      .visual-tag { left: 19px; top: 18px; }
+      .model-data { grid-template-columns: 1fr 1fr; }
+      .model-stat { padding: 20px 10px 22px 0; }
+      .model-stat + .model-stat { padding-left: 15px; }
+      .model-stat:nth-child(3) { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
+      .model-stat:nth-child(4) { border-top: 1px solid var(--line); }
+      .model-stat strong { font-size: 30px; }
+      .model-footer { align-items: flex-start; flex-direction: column; }
+      .model-footer-actions { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .footer-cta-actions { flex-direction: column; align-items: flex-start; }
+      .engineering { min-height: 0; padding-block: 88px 82px; }
+      .engineering-backdrop { inset: 0; opacity: .47; }
+      .engineering-backdrop img { object-position: 62% center; }
+      .engineering-backdrop::after { background: linear-gradient(90deg, rgba(16,26,34,.97) 0%, rgba(16,26,34,.82) 46%, rgba(16,26,34,.42) 100%), linear-gradient(0deg, rgba(8,13,18,.7), transparent 50%); }
+      .engineering-copy { max-width: 100%; }
+      .engineering-intro { max-width: 520px; }
+      .engineering-stats, .mode-module { max-width: 600px; }
+      .mode-panel { grid-template-columns: 110px 1fr; }
+      .atelier-grid { grid-template-columns: 1fr; gap: 42px; }
+      .atelier-visual { min-height: 390px; aspect-ratio: 1.03 / 1; }
+      .atelier-copy h2 { font-size: clamp(46px, 11vw, 70px); }
+      .limited-grid { grid-template-columns: 1fr; gap: 14px; }
+      .limited-number { min-height: 235px; justify-content: flex-start; padding-left: 5vw; font-size: clamp(185px, 50vw, 300px); }
+      .limited-number::after { left: 0; width: 220px; }
+      .limited-copy { padding-top: 10px; }
+      .limited-copy h2 { font-size: clamp(43px, 10vw, 66px); }
+      .footer-cta { gap: 30px; }
+      .footer-cta h2 { font-size: clamp(43px, 10vw, 69px); }
+      .footer-main { grid-template-columns: 1fr 1fr; gap: 34px 22px; }
+      .footer-brand-col { grid-column: 1 / -1; }
+      .footer-bottom { align-items: flex-start; flex-direction: column; gap: 12px; }
+    }
+    @media (max-width: 390px) {
+      :root { --page-gutter: 18px; }
+      .hero-actions { gap: 18px; }
+      .hero-actions .button { min-width: 195px; padding-inline: 15px; }
+      .hero-facts { gap: 9px; }
+      .config-stage { min-height: 300px; }
+      .config-controls { padding: 18px; }
+      .hero-fact strong { font-size: 19px; }
+      .hero-fact span { font-size: 6px; }
+      .principle { letter-spacing: .08em; }
+      .atelier-image-note { padding: 14px 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="AURELION — на главную">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.6 19.6 19H16l-1.23-2.63H9.17L7.95 19H4.4L12 3.6Z" stroke="currentColor" stroke-width="1.2"/><path d="M10.15 13.65h3.7L12 9.7l-1.85 3.95Z" fill="currentColor"/></svg>
+        </span>
+        <span class="brand-name">AURELION<small>TORINO · ITALIA</small></span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
+        <a href="#vespera" data-i18n="nav_model">Автомобиль</a>
+        <a href="#configure" data-i18n="nav_config">Конфигурация</a>
+        <a href="#engineering" data-i18n="nav_engineering">Инженерия</a>
+        <a href="#atelier" data-i18n="nav_atelier">Ателье</a>
+      </nav>
+      <div class="header-actions">
+        <button class="language-toggle" id="language-toggle" type="button" aria-label="Переключить язык">RU <span>/</span> EN</button>
+        <button class="header-cta js-contact" type="button" data-interest="general"><span data-i18n="nav_contact">Связаться</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13 13 3M4 3h9v9" stroke="currentColor" stroke-width="1.2"/></svg></button>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-image" role="img" aria-label="Гиперкар AURELION у современного дома на берегу моря"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow hero-kicker" data-i18n="hero_kicker">НОВАЯ ГЛАВА · 2026</p>
+          <p class="hero-micro">AURELION / 01</p>
+          <h1 id="hero-title"><span data-i18n="hero_title_first">Скорость,</span><em data-i18n="hero_title_second">обретающая форму.</em></h1>
+          <p class="hero-description" data-i18n="hero_description">Знакомьтесь: Vespera. Гиперкар, в котором точность инженерии встречается с чувством прекрасного.</p>
+          <div class="hero-actions">
+            <a class="button" href="#vespera"><span data-i18n="hero_button">Открыть Vespera</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.25"/></svg></a>
+            <a class="arrow-link" href="#philosophy"><span data-i18n="hero_more">Наш подход</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13 13 3M4 3h9v9" stroke="currentColor" stroke-width="1.2"/></svg></a>
+          </div>
+        </div>
+        <span class="hero-index">47° 29′ N &nbsp;·&nbsp; 11° 20′ E</span>
+        <div class="hero-bottom">
+          <a href="#philosophy" class="scroll-cue"><i></i><span data-i18n="scroll_label">Листайте вниз</span></a>
+          <div class="hero-facts" aria-label="Ключевые характеристики">
+            <div class="hero-fact"><strong>1 280</strong><span data-i18n="fact_power">л.с. · мощность</span></div>
+            <div class="hero-fact"><strong>2,4 <small>с</small></strong><span data-i18n="fact_accel">0—100 км/ч</span></div>
+            <div class="hero-fact"><strong>410</strong><span data-i18n="fact_speed">км/ч · максимум</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy" id="philosophy">
+      <div class="container philosophy-grid">
+        <aside class="philosophy-aside reveal">
+          <p class="section-index" data-i18n="philosophy_index">01 — МАНИФЕСТ</p>
+          <div class="seal" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12.5" stroke="currentColor"/><path d="m16 7 6.2 17h-3.1L16 15l-3.1 9H9.8L16 7Z" stroke="currentColor" stroke-width=".8"/></svg></div>
+        </aside>
+        <div class="philosophy-copy reveal">
+          <h2><span data-i18n="philosophy_title_a">Инженерия не должна</span><br><em data-i18n="philosophy_title_b">затмевать чувство.</em></h2>
+          <div class="philosophy-bottom">
+            <p data-i18n="philosophy_body">Мы создаём не просто быстрые автомобили. Мы ищем ту редкую точку равновесия, где передовые технологии становятся продолжением интуиции, а каждая линия имеет своё предназначение.</p>
+            <span class="philosophy-signature">Forma. Anima. Velocità.</span>
+          </div>
+        </div>
+      </div>
+      <div class="container principles reveal">
+        <div class="principle"><span>01</span><b data-i18n="principle_1">Безупречное равновесие</b></div>
+        <div class="principle"><span>02</span><b data-i18n="principle_2">Честная мощность</b></div>
+        <div class="principle"><span>03</span><b data-i18n="principle_3">Человек в центре</b></div>
+      </div>
+    </section>
+
+    <section class="heritage" id="heritage">
+      <div class="container">
+        <div class="heritage-head reveal">
+          <div>
+            <p class="eyebrow dark" data-i18n="heritage_kicker">НАША ИСТОРИЯ · 1969—2026</p>
+            <h2 data-i18n="heritage_title">Долгая память.<br><em>Чистый импульс.</em></h2>
+          </div>
+          <p class="heritage-intro" data-i18n="heritage_intro">AURELION выросла из небольшой туринской мастерской кузовного мастера Лоренцо Аурели. Десятилетия спустя его идея остаётся неизменной: создавать автомобили, в которых форма служит ощущению.</p>
+        </div>
+        <div class="timeline reveal" aria-label="Хронология AURELION">
+          <article class="timeline-item"><span class="timeline-year">1969</span><h3 data-i18n="timeline_1969_title">Officina Aurelion</h3><p data-i18n="timeline_1969_body">Лоренцо Аурели открывает в Турине мастерскую лёгких кузовов для частных гонщиков.</p></article>
+          <article class="timeline-item"><span class="timeline-year">1987</span><h3 data-i18n="timeline_1987_title">Forma 01</h3><p data-i18n="timeline_1987_body">Первый экспериментальный спорткар соединяет алюминиевую конструкцию и чистую аэродинамику.</p></article>
+          <article class="timeline-item"><span class="timeline-year">2004</span><h3 data-i18n="timeline_2004_title">Archivio Vivo</h3><p data-i18n="timeline_2004_body">Архив эскизов и прототипов сохраняет главное наследие марки — внимание к пропорциям.</p></article>
+          <article class="timeline-item"><span class="timeline-year">2026</span><h3 data-i18n="timeline_2026_title">AURELION Vespera</h3><p data-i18n="timeline_2026_body">Новая глава независимой марки: двенадцать автомобилей, созданных вручную в Турине.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="model" id="vespera">
+      <div class="container">
+        <div class="model-head reveal">
+          <div class="model-title-wrap">
+            <p class="eyebrow" data-i18n="model_kicker">ПЕРВАЯ МОДЕЛЬ · 2026</p>
+            <h2 class="model-title">VESPERA<small>N° 01</small></h2>
+          </div>
+          <p class="model-lead" data-i18n="model_lead">Создана для мгновения перед стартом — и для всего, что остаётся после. Три режима характера. Одна безошибочная траектория.</p>
+        </div>
+        <figure class="model-visual reveal">
+          <img src="public/aurelion-profile.jpg" alt="AURELION Vespera на извилистой прибрежной дороге" loading="lazy">
+          <button class="hotspot" type="button" data-detail="aero" style="--x:57%;--y:57%" aria-label="Аэродинамика" aria-expanded="false" aria-controls="vehicle-detail"><span>01</span></button>
+          <button class="hotspot" type="button" data-detail="cockpit" style="--x:46%;--y:67%" aria-label="Кокпит" aria-expanded="false" aria-controls="vehicle-detail"><span>02</span></button>
+          <button class="hotspot" type="button" data-detail="chassis" style="--x:67%;--y:75%" aria-label="Шасси" aria-expanded="false" aria-controls="vehicle-detail"><span>03</span></button>
+          <div class="detail-card" id="vehicle-detail" aria-hidden="true" aria-live="polite">
+            <button class="detail-close" id="detail-close" type="button" aria-label="Закрыть описание"><svg viewBox="0 0 16 16" fill="none"><path d="m3 3 10 10M13 3 3 13" stroke="currentColor" stroke-width="1.2"/></svg></button>
+            <span class="small-label" id="detail-index">01 / 03</span>
+            <h3 id="detail-title">Активная аэродинамика</h3>
+            <p id="detail-body">Профиль кузова меняется вместе с темпом движения: низкое сопротивление на прямой, точная прижимная сила в повороте.</p>
+          </div>
+          <span class="visual-tag" data-i18n="visual_tag">Дорога принадлежит тем, кто чувствует её</span>
+          <figcaption class="visual-caption"><i></i><span data-i18n="visual_caption">В движении<br>рождается тишина.</span></figcaption>
+        </figure>
+        <div class="model-data reveal">
+          <div class="model-stat"><strong>1 280 <small>л.с.</small></strong><span data-i18n="spec_power">Гибридная система</span></div>
+          <div class="model-stat"><strong>2,4 <small>с</small></strong><span data-i18n="spec_accel">Разгон 0—100 км/ч</span></div>
+          <div class="model-stat"><strong>410 <small>км/ч</small></strong><span data-i18n="spec_speed">Максимальная скорость</span></div>
+          <div class="model-stat"><strong>1 / 12</strong><span data-i18n="spec_series">Экземпляров серии</span></div>
+        </div>
+        <div class="model-footer reveal">
+          <p data-i18n="model_note">Каждый автомобиль собирается вручную в Турине</p>
+          <div class="model-footer-actions">
+            <button class="arrow-link js-contact" type="button" data-interest="presentation"><span data-i18n="model_cta">Заказать личную презентацию</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13 13 3M4 3h9v9" stroke="currentColor" stroke-width="1.2"/></svg></button>
+            <a class="arrow-link" href="vespera.html"><span data-i18n="spec_cta">Полные характеристики</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13 13 3M4 3h9v9" stroke="currentColor" stroke-width="1.2"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="configurator" id="configure">
+      <div class="container">
+        <div class="configurator-head reveal">
+          <div>
+            <p class="eyebrow dark" data-i18n="config_kicker">AURELION ATELIER · 01</p>
+            <h2 data-i18n="config_title">Соберите Vespera.<br><em>Под себя.</em></h2>
+          </div>
+          <p data-i18n="config_intro">Начните с оттенка, который задаёт настроение. Затем выберите материалы и колёса. Это отправная точка для разговора с вашим персональным специалистом.</p>
+        </div>
+        <div class="configurator-layout reveal">
+          <div class="config-stage">
+            <img id="config-image" src="public/aurelion-hero.jpg" alt="AURELION Vespera в цвете Blu Notte" loading="lazy">
+            <div class="config-stage-top"><span data-i18n="config_stage_label">ПРЕДВАРИТЕЛЬНЫЙ ОБРАЗ</span><strong>VESPERA · N° 01</strong></div>
+            <div class="config-stage-bottom"><div><small data-i18n="config_selected_paint">ВЫБРАННЫЙ ОТТЕНОК</small><strong id="config-paint-name">Blu Notte</strong></div><small data-i18n="config_render_note">Изображение концепта</small></div>
+          </div>
+          <div class="config-controls">
+            <div class="config-control-head"><h3 data-i18n="config_exterior">01 · Цвет кузова</h3><span>01 / 03</span></div>
+            <div class="config-group" style="border-top:0;padding-top:0">
+              <div class="paint-options" role="group" aria-label="Цвет кузова">
+                <button class="paint-option" type="button" data-paint="blu" aria-pressed="true"><span class="paint-swatch" style="background:#142b3a"></span><span><b data-i18n="paint_blu">Blu Notte</b><small data-i18n="paint_blu_sub">Полуночный синий</small></span></button>
+                <button class="paint-option" type="button" data-paint="argento" aria-pressed="false"><span class="paint-swatch" style="background:linear-gradient(135deg,#d9d8d2,#858b8d)"></span><span><b data-i18n="paint_argento">Argento Nuvola</b><small data-i18n="paint_argento_sub">Серебро облаков</small></span></button>
+                <button class="paint-option" type="button" data-paint="rosso" aria-pressed="false"><span class="paint-swatch" style="background:linear-gradient(135deg,#7d323b,#36171f)"></span><span><b data-i18n="paint_rosso">Rosso Vespera</b><small data-i18n="paint_rosso_sub">Глубокий винный</small></span></button>
+              </div>
+            </div>
+            <div class="config-group">
+              <div class="config-control-head"><h3 data-i18n="config_interior">02 · Отделка салона</h3><span>02 / 03</span></div>
+              <div class="material-options" role="group" aria-label="Отделка салона">
+                <button class="material-option" type="button" data-interior="nero" aria-pressed="true"><span class="material-chip"></span><b data-i18n="interior_nero">Nero Intenso</b></button>
+                <button class="material-option" type="button" data-interior="sabbia" aria-pressed="false"><span class="material-chip sabbia"></span><b data-i18n="interior_sabbia">Cuoio Sabbia</b></button>
+                <button class="material-option" type="button" data-interior="blu" aria-pressed="false"><span class="material-chip blu"></span><b data-i18n="interior_blu">Blu Profondo</b></button>
+              </div>
+            </div>
+            <div class="config-group">
+              <div class="config-control-head"><h3 data-i18n="config_wheels">03 · Колёса</h3><span>03 / 03</span></div>
+              <div class="wheel-options" role="group" aria-label="Дизайн колёс">
+                <button class="wheel-option" type="button" data-wheels="vela" aria-pressed="true">
+                  <svg class="wheel-graphic" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="4" stroke="currentColor"/><path d="M20 4v12m0 8v12M4 20h12m8 0h12M8.7 8.7l8.5 8.5m5.6 5.6 8.5 8.5m0-22.6-8.5 8.5m-5.6 5.6-8.5 8.5" stroke="currentColor" stroke-width="1"/></svg>
+                  <span><b data-i18n="wheel_vela">Vela forged</b><small data-i18n="wheel_vela_sub">Кованый алюминий</small></span>
+                </button>
+                <button class="wheel-option" type="button" data-wheels="turbina" aria-pressed="false">
+                  <svg class="wheel-graphic" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="4" stroke="currentColor"/><path d="M20 4v12m0 8v12M4 20h12m8 0h12m-23-11 6 8m2 6 6 8m8-22-8 8m-6 6-8 8" stroke="currentColor" stroke-width="1"/></svg>
+                  <span><b data-i18n="wheel_turbina">Turbina 21</b><small data-i18n="wheel_turbina_sub">Титановый финиш</small></span>
+                </button>
+              </div>
+            </div>
+            <div class="build-summary" aria-live="polite">
+              <div class="build-summary-top"><span data-i18n="build_summary_label">ВАША СПЕЦИФИКАЦИЯ</span><code id="build-code">AV-01 / BLU-NERO-VELA</code></div>
+              <p id="build-summary-text">Blu Notte · Nero Intenso · Vela forged</p>
+            </div>
+            <div class="config-actions">
+              <button id="save-config" type="button" data-i18n="save_build">Сохранить сборку</button>
+              <button id="share-config" type="button" data-i18n="share_build">Поделиться ссылкой</button>
+            </div>
+            <button class="button button-dark config-inquire js-contact" type="button" data-interest="configuration" data-config-enquiry="true"><span data-i18n="config_request">Обсудить эту конфигурацию</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13 13 3M4 3h9v9" stroke="currentColor" stroke-width="1.2"/></svg></button>
+            <p class="config-status" id="config-status" role="status" aria-live="polite"></p>
+            <a class="config-brochure" href="public/aurelion-vespera-brochure.pdf" download><span data-i18n="brochure_link">Скачать брошюру Vespera</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0 3-3m-3 3L5 7M3 13h10" stroke="currentColor" stroke-width="1.2"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="engineering" id="engineering">
+      <div class="engineering-backdrop" aria-hidden="true"><img src="public/aurelion-powertrain.jpg" alt="" loading="lazy"></div>
+      <div class="container engineering-inner">
+        <div class="engineering-copy reveal">
+          <p class="eyebrow" data-i18n="engineering_kicker">02 · СИЛОВОЙ КОМПЛЕКС</p>
+          <h2><span data-i18n="engineering_title_a">Мощь, которая</span><br><em data-i18n="engineering_title_b">отвечает мгновенно.</em></h2>
+          <p class="engineering-intro" data-i18n="engineering_body">4,2-литровый V8 biturbo и три электромотора работают как единая система. Не ради цифр на бумаге — ради абсолютно точного отклика в каждом движении.</p>
+          <div class="engineering-stats">
+            <div class="engineering-stat"><strong>4,2 <small>л</small></strong><span data-i18n="engine_v8">V8 biturbo</span></div>
+            <div class="engineering-stat"><strong>03</strong><span data-i18n="engine_motors">электромотора</span></div>
+            <div class="engineering-stat"><strong>1 280</strong><span data-i18n="engine_power">системных л.с.</span></div>
+          </div>
+          <div class="mode-module">
+            <div class="mode-top">
+              <div><span class="small-label" data-i18n="mode_label">РЕЖИМЫ · 03</span><h3><span data-i18n="mode_heading_a">Три характера.</span><br><em data-i18n="mode_heading_b">Один инстинкт.</em></h3></div>
+              <span class="mode-count"><strong id="mode-count">01</strong> / 03</span>
+            </div>
+            <div class="mode-tabs" role="tablist" aria-label="Режимы движения">
+              <button class="mode-tab" type="button" role="tab" id="mode-tab-gt" data-mode="gt" aria-selected="true" aria-controls="mode-panel"><span>01</span><b data-i18n="mode_gt">Gran Turismo</b></button>
+              <button class="mode-tab" type="button" role="tab" id="mode-tab-sport" data-mode="sport" aria-selected="false" aria-controls="mode-panel"><span>02</span><b data-i18n="mode_sport">Sport</b></button>
+              <button class="mode-tab" type="button" role="tab" id="mode-tab-corsa" data-mode="corsa" aria-selected="false" aria-controls="mode-panel"><span>03</span><b data-i18n="mode_corsa">Corsa</b></button>
+            </div>
+            <div class="mode-panel" id="mode-panel" role="tabpanel" aria-live="polite" aria-labelledby="mode-tab-gt">
+              <p class="mode-name" id="mode-name">Gran Turismo</p>
+              <p class="mode-description" id="mode-description">Спокойный пульс, длинная дуга и адаптивная подвеска. Vespera умеет быть безупречно деликатной.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="atelier" id="atelier">
+      <div class="container atelier-grid">
+        <figure class="atelier-visual reveal">
+          <img src="public/aurelion-craft.jpg" alt="Мастер вручную отделывает кожаную деталь салона" loading="lazy">
+          <figcaption class="atelier-image-note"><span>3200</span><b data-i18n="atelier_hours">часов внимания к деталям</b></figcaption>
+        </figure>
+        <div class="atelier-copy reveal">
+          <p class="eyebrow dark" data-i18n="atelier_kicker">ATELIER · TORINO</p>
+          <h2 data-i18n="atelier_title">Создана вручную.<br><em>Настроена под вас.</em></h2>
+          <p data-i18n="atelier_body">Vespera рождается в небольшом ателье, где у каждого мастера есть имя, а у каждой детали — своя история. Ваш автомобиль будет единственным в своём роде, потому что таким его задумали вы.</p>
+          <div class="craft-list">
+            <div class="craft-item"><span>01</span><div><strong data-i18n="craft_1_title">Материалы с характером</strong><p data-i18n="craft_1_body">Итальянская кожа, титан и углеволокно — без компромиссов и лишнего блеска.</p></div></div>
+            <div class="craft-item"><span>02</span><div><strong data-i18n="craft_2_title">Ваша палитра</strong><p data-i18n="craft_2_body">Более 240 оттенков. Или цвет, который существует только для вас.</p></div></div>
+            <div class="craft-item"><span>03</span><div><strong data-i18n="craft_3_title">Ручная сборка</strong><p data-i18n="craft_3_body">Один автомобиль. Одна команда. Ни одного случайного шва.</p></div></div>
+          </div>
+          <button class="arrow-link js-contact" type="button" data-interest="atelier"><span data-i18n="atelier_cta">Открыть двери ателье</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13 13 3M4 3h9v9" stroke="currentColor" stroke-width="1.2"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="limited">
+      <div class="container limited-grid">
+        <div class="limited-number reveal" aria-label="12 экземпляров">12<small>/12</small></div>
+        <div class="limited-copy reveal">
+          <p class="eyebrow" data-i18n="limited_kicker">РЕДКАЯ ВОЗМОЖНОСТЬ</p>
+          <h2 data-i18n="limited_title">Не для всех.<br><em>Именно для вас.</em></h2>
+          <p data-i18n="limited_body">Vespera будет выпущена ограниченной серией из двенадцати автомобилей. Не ради эксклюзивности как таковой — а чтобы сохранить то, ради чего всё началось: внимание, время и личное участие.</p>
+          <button class="button button-outline js-contact" type="button" data-interest="presentation"><span data-i18n="limited_button">Узнать о доступности</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.25"/></svg></button>
+          <span class="small-label" data-i18n="limited_note">Персональная конфигурация · приватная презентация</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container footer-cta">
+      <div class="footer-cta-copy reveal">
+        <p class="eyebrow" data-i18n="footer_kicker">ВАША ИСТОРИЯ НАЧИНАЕТСЯ ЗДЕСЬ</p>
+        <h2 data-i18n="footer_title">Давайте обсудим<br><em>вашу Vespera.</em></h2>
+      </div>
+      <div class="footer-cta-actions reveal">
+        <button class="button js-contact" type="button" data-interest="presentation"><span data-i18n="footer_button">Запросить приватную встречу</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13 13 3M4 3h9v9" stroke="currentColor" stroke-width="1.25"/></svg></button>
+        <a class="arrow-link" href="public/aurelion-vespera-brochure.pdf" download><span data-i18n="footer_brochure">Скачать брошюру</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0 3-3m-3 3L5 7M3 13h10" stroke="currentColor" stroke-width="1.2"/></svg></a>
+      </div>
+    </div>
+    <div class="container footer-main">
+      <div class="footer-brand-col">
+        <a class="brand" href="#top" aria-label="AURELION — наверх">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3.6 19.6 19H16l-1.23-2.63H9.17L7.95 19H4.4L12 3.6Z" stroke="currentColor" stroke-width="1.2"/><path d="M10.15 13.65h3.7L12 9.7l-1.85 3.95Z" fill="currentColor"/></svg></span>
+          <span class="brand-name">AURELION<small>TORINO · ITALIA</small></span>
+        </a>
+        <p class="footer-note" data-i18n="footer_note">Независимая автомобильная марка. Создано с намерением. Собрано вручную.</p>
+      </div>
+      <div class="footer-col">
+        <h3 data-i18n="footer_explore">Изучить</h3>
+        <a href="#vespera" data-i18n="nav_model">Автомобиль</a>
+        <a href="#configure" data-i18n="nav_config">Конфигурация</a>
+        <a href="#heritage" data-i18n="footer_story">История марки</a>
+        <a href="#philosophy" data-i18n="nav_philosophy">Философия</a>
+        <a href="#engineering" data-i18n="nav_engineering">Инженерия</a>
+        <a href="#atelier" data-i18n="nav_atelier">Ателье</a>
+        <a href="vespera.html" data-i18n="spec_cta">Полные характеристики</a>
+      </div>
+      <div class="footer-col">
+        <h3 data-i18n="footer_contact">Контакты</h3>
+        <a href="mailto:concierge@aurelion.example">concierge@aurelion.example</a>
+        <p>Via della Forma 08, Torino</p>
+        <p>+39 011 204 08 01</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© AURELION 2026 · <span data-i18n="footer_rights">Все права защищены</span></span>
+      <a href="#top" data-i18n="back_top">Вернуться наверх ↑</a>
+      <span data-i18n="footer_design">Создано вне времени</span>
+      <span class="footer-fiction-note" data-i18n="fiction_note">Вымышленная марка · концепт</span>
+    </div>
+  </footer>
+
+  <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-inner">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Закрыть окно"><svg viewBox="0 0 16 16" fill="none"><path d="m3 3 10 10M13 3 3 13" stroke="currentColor" stroke-width="1.2"/></svg></button>
+      <div class="form-content">
+        <p class="eyebrow dark" data-i18n="form_kicker">ЛИЧНОЕ ОБЩЕНИЕ</p>
+        <h2 id="dialog-title" data-i18n="form_title">Начнём знакомство.</h2>
+        <p data-i18n="form_intro">Оставьте контакты — наш представитель свяжется с вами, чтобы организовать приватную презентацию.</p>
+        <p class="form-config-summary" id="form-config-summary" hidden></p>
+        <form id="contact-form">
+          <input type="hidden" name="build" id="hidden-build">
+          <label class="form-field"><span data-i18n="form_name">Ваше имя</span><input name="name" type="text" autocomplete="name" placeholder="Александр" required></label>
+          <label class="form-field"><span data-i18n="form_email">Электронная почта</span><input name="email" type="email" autocomplete="email" placeholder="name@example.com" required></label>
+          <label class="form-field"><span data-i18n="form_interest">Что вас интересует</span><select name="interest" id="form-interest"><option value="presentation" data-i18n="form_option_1">Приватная встреча</option><option value="brochure" data-i18n="form_option_2">Брошюра Vespera</option><option value="configuration" data-i18n="form_option_3">Персональная конфигурация</option><option value="atelier" data-i18n="form_option_4">Ателье и материалы</option><option value="general" data-i18n="form_option_5">Общий запрос</option><option value="press" data-i18n="form_option_6">Пресса и сотрудничество</option></select></label>
+          <p class="form-demo-note" data-i18n="form_demo_note">Демонстрационная форма: отправка заявок не подключена.</p>
+          <button class="button button-dark" type="submit"><span data-i18n="form_send">Отправить запрос</span><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.25"/></svg></button>
+        </form>
+      </div>
+      <div class="form-success" id="form-success" hidden>
+        <span class="form-success-mark"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4.5 4.5L19 7" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        <h3 data-i18n="success_title">Благодарим.</h3>
+        <p data-i18n="success_body">Ваш запрос принят. Представитель AURELION свяжется с вами в ближайшее время.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    (() => {
+      const translations = {
+        ru: {
+          nav_model:'Автомобиль', nav_config:'Конфигурация', nav_engineering:'Инженерия', nav_philosophy:'Философия', nav_atelier:'Ателье', nav_contact:'Связаться',
+          heritage_kicker:'НАША ИСТОРИЯ · 1969—2026', heritage_title:'Долгая память.<br><em>Чистый импульс.</em>', heritage_intro:'AURELION выросла из небольшой туринской мастерской кузовного мастера Лоренцо Аурели. Десятилетия спустя его идея остаётся неизменной: создавать автомобили, в которых форма служит ощущению.',
+          timeline_1969_title:'Officina Aurelion', timeline_1969_body:'Лоренцо Аурели открывает в Турине мастерскую лёгких кузовов для частных гонщиков.', timeline_1987_title:'Forma 01', timeline_1987_body:'Первый экспериментальный спорткар соединяет алюминиевую конструкцию и чистую аэродинамику.', timeline_2004_title:'Archivio Vivo', timeline_2004_body:'Архив эскизов и прототипов сохраняет главное наследие марки — внимание к пропорциям.', timeline_2026_title:'AURELION Vespera', timeline_2026_body:'Новая глава независимой марки: двенадцать автомобилей, созданных вручную в Турине.',
+          config_kicker:'AURELION ATELIER · 01', config_title:'Соберите Vespera.<br><em>Под себя.</em>', config_intro:'Начните с оттенка, который задаёт настроение. Затем выберите материалы и колёса. Это отправная точка для разговора с вашим персональным специалистом.', config_stage_label:'ПРЕДВАРИТЕЛЬНЫЙ ОБРАЗ', config_selected_paint:'ВЫБРАННЫЙ ОТТЕНОК', config_render_note:'Изображение концепта', config_exterior:'01 · Цвет кузова', config_interior:'02 · Отделка салона', config_wheels:'03 · Колёса',
+          paint_blu:'Blu Notte', paint_blu_sub:'Полуночный синий', paint_argento:'Argento Nuvola', paint_argento_sub:'Серебро облаков', paint_rosso:'Rosso Vespera', paint_rosso_sub:'Глубокий винный', interior_nero:'Nero Intenso', interior_sabbia:'Cuoio Sabbia', interior_blu:'Blu Profondo', wheel_vela:'Vela forged', wheel_vela_sub:'Кованый алюминий', wheel_turbina:'Turbina 21', wheel_turbina_sub:'Титановый финиш', build_summary_label:'ВАША СПЕЦИФИКАЦИЯ', save_build:'Сохранить сборку', share_build:'Поделиться ссылкой', config_request:'Обсудить эту конфигурацию', brochure_link:'Скачать брошюру Vespera',
+          spec_cta:'Полные характеристики', footer_story:'История марки',
+          engineering_kicker:'02 · СИЛОВОЙ КОМПЛЕКС', engineering_title_a:'Мощь, которая', engineering_title_b:'отвечает мгновенно.', engineering_body:'4,2-литровый V8 biturbo и три электромотора работают как единая система. Не ради цифр на бумаге — ради абсолютно точного отклика в каждом движении.', engine_v8:'V8 biturbo', engine_motors:'электромотора', engine_power:'системных л.с.', mode_label:'РЕЖИМЫ · 03', mode_heading_a:'Три характера.', mode_heading_b:'Один инстинкт.', mode_gt:'Gran Turismo', mode_sport:'Sport', mode_corsa:'Corsa',
+          hero_kicker:'НОВАЯ ГЛАВА · 2026', hero_title_first:'Скорость,', hero_title_second:'обретающая форму.',
+          hero_description:'Знакомьтесь: Vespera. Гиперкар, в котором точность инженерии встречается с чувством прекрасного.', hero_button:'Открыть Vespera', hero_more:'Наш подход', scroll_label:'Листайте вниз',
+          fact_power:'л.с. · мощность', fact_accel:'0—100 км/ч', fact_speed:'км/ч · максимум',
+          philosophy_index:'01 — МАНИФЕСТ', philosophy_title_a:'Инженерия не должна', philosophy_title_b:'затмевать чувство.',
+          philosophy_body:'Мы создаём не просто быстрые автомобили. Мы ищем ту редкую точку равновесия, где передовые технологии становятся продолжением интуиции, а каждая линия имеет своё предназначение.',
+          principle_1:'Безупречное равновесие', principle_2:'Честная мощность', principle_3:'Человек в центре',
+          model_kicker:'ПЕРВАЯ МОДЕЛЬ · 2026', model_lead:'Создана для мгновения перед стартом — и для всего, что остаётся после. Три режима характера. Одна безошибочная траектория.',
+          visual_tag:'Дорога принадлежит тем, кто чувствует её', visual_caption:'В движении<br>рождается тишина.', spec_power:'Гибридная система', spec_accel:'Разгон 0—100 км/ч', spec_speed:'Максимальная скорость', spec_series:'Экземпляров серии',
+          model_note:'Каждый автомобиль собирается вручную в Турине', model_cta:'Заказать личную презентацию',
+          atelier_hours:'часов внимания к деталям', atelier_kicker:'ATELIER · TORINO', atelier_title:'Создана вручную.<br><em>Настроена под вас.</em>',
+          atelier_body:'Vespera рождается в небольшом ателье, где у каждого мастера есть имя, а у каждой детали — своя история. Ваш автомобиль будет единственным в своём роде, потому что таким его задумали вы.',
+          craft_1_title:'Материалы с характером', craft_1_body:'Итальянская кожа, титан и углеволокно — без компромиссов и лишнего блеска.',
+          craft_2_title:'Ваша палитра', craft_2_body:'Более 240 оттенков. Или цвет, который существует только для вас.',
+          craft_3_title:'Ручная сборка', craft_3_body:'Один автомобиль. Одна команда. Ни одного случайного шва.', atelier_cta:'Открыть двери ателье',
+          limited_kicker:'РЕДКАЯ ВОЗМОЖНОСТЬ', limited_title:'Не для всех.<br><em>Именно для вас.</em>',
+          limited_body:'Vespera будет выпущена ограниченной серией из двенадцати автомобилей. Не ради эксклюзивности как таковой — а чтобы сохранить то, ради чего всё началось: внимание, время и личное участие.',
+          limited_button:'Узнать о доступности', limited_note:'Персональная конфигурация · приватная презентация',
+          footer_kicker:'ВАША ИСТОРИЯ НАЧИНАЕТСЯ ЗДЕСЬ', footer_title:'Давайте обсудим<br><em>вашу Vespera.</em>', footer_button:'Запросить приватную встречу',
+          footer_brochure:'Скачать брошюру', footer_note:'Независимая автомобильная марка. Создано с намерением. Собрано вручную.', footer_explore:'Изучить', footer_contact:'Контакты', footer_rights:'Все права защищены', back_top:'Вернуться наверх ↑', footer_design:'Создано вне времени', fiction_note:'Вымышленная марка · концепт',
+          form_kicker:'ЛИЧНОЕ ОБЩЕНИЕ', form_title:'Начнём знакомство.', form_intro:'Оставьте контакты — наш представитель свяжется с вами, чтобы организовать приватную презентацию.', form_name:'Ваше имя', form_email:'Электронная почта', form_interest:'Что вас интересует', form_option_1:'Приватная встреча', form_option_2:'Брошюра Vespera', form_option_3:'Персональная конфигурация', form_option_4:'Ателье и материалы', form_option_5:'Общий запрос', form_option_6:'Пресса и сотрудничество', form_demo_note:'Демонстрационная форма: отправка заявок не подключена.', form_send:'Отправить запрос', success_title:'Благодарим.', success_body:'Ваш запрос принят. Представитель AURELION свяжется с вами в ближайшее время.'
+        },
+        en: {
+          nav_model:'The car', nav_config:'Configure', nav_engineering:'Engineering', nav_philosophy:'Philosophy', nav_atelier:'Atelier', nav_contact:'Enquire',
+          heritage_kicker:'OUR STORY · 1969—2026', heritage_title:'A long memory.<br><em>A clear impulse.</em>', heritage_intro:'AURELION began as a small Torino coachbuilding atelier founded by Lorenzo Aureli. Decades later, the idea remains the same: create cars where form serves feeling.',
+          timeline_1969_title:'Officina Aurelion', timeline_1969_body:'Lorenzo Aureli opens a Torino workshop devoted to lightweight coachwork for private racers.', timeline_1987_title:'Forma 01', timeline_1987_body:'The first experimental sports car brings together an aluminium structure and pure aerodynamics.', timeline_2004_title:'Archivio Vivo', timeline_2004_body:'An archive of sketches and prototypes preserves the marque’s defining legacy: a sensitivity to proportion.', timeline_2026_title:'AURELION Vespera', timeline_2026_body:'A new chapter for an independent marque: twelve cars, crafted by hand in Torino.',
+          config_kicker:'AURELION ATELIER · 01', config_title:'Create your Vespera.<br><em>Make it yours.</em>', config_intro:'Begin with a shade that sets the mood. Then choose the materials and wheels. Consider this the first conversation with your personal specialist.', config_stage_label:'CONFIGURATION PREVIEW', config_selected_paint:'SELECTED FINISH', config_render_note:'Concept visualization', config_exterior:'01 · Exterior paint', config_interior:'02 · Interior trim', config_wheels:'03 · Wheels',
+          paint_blu:'Blu Notte', paint_blu_sub:'Midnight blue', paint_argento:'Argento Nuvola', paint_argento_sub:'Cloud silver', paint_rosso:'Rosso Vespera', paint_rosso_sub:'Deep oxblood', interior_nero:'Nero Intenso', interior_sabbia:'Cuoio Sabbia', interior_blu:'Blu Profondo', wheel_vela:'Vela forged', wheel_vela_sub:'Forged aluminium', wheel_turbina:'Turbina 21', wheel_turbina_sub:'Titanium finish', build_summary_label:'YOUR SPECIFICATION', save_build:'Save this build', share_build:'Share build link', config_request:'Discuss this configuration', brochure_link:'Download the Vespera brochure',
+          spec_cta:'Full specifications', footer_story:'Our story',
+          engineering_kicker:'02 · POWERTRAIN', engineering_title_a:'Power that', engineering_title_b:'answers instantly.', engineering_body:'A 4.2-litre twin-turbo V8 and three electric motors work as one. Not for figures on a page, but for a response that feels precise in every movement.', engine_v8:'Twin-turbo V8', engine_motors:'electric motors', engine_power:'combined horsepower', mode_label:'DRIVE MODES · 03', mode_heading_a:'Three characters.', mode_heading_b:'One instinct.', mode_gt:'Gran Turismo', mode_sport:'Sport', mode_corsa:'Corsa',
+          hero_kicker:'A NEW CHAPTER · 2026', hero_title_first:'Speed,', hero_title_second:'given its shape.',
+          hero_description:'Meet Vespera. A hypercar where engineering precision meets a sense of the extraordinary.', hero_button:'Discover Vespera', hero_more:'Our philosophy', scroll_label:'Scroll to explore',
+          fact_power:'hp · power', fact_accel:'0—100 km/h', fact_speed:'km/h · top speed',
+          philosophy_index:'01 — MANIFESTO', philosophy_title_a:'Engineering should never', philosophy_title_b:'overshadow emotion.',
+          philosophy_body:'We do not simply build fast cars. We seek that rare point of balance where advanced technology becomes an extension of instinct, and every line has a reason to exist.',
+          principle_1:'Perfect equilibrium', principle_2:'Honest power', principle_3:'Human by design',
+          model_kicker:'THE FIRST MODEL · 2026', model_lead:'Made for the moment before the start — and everything that stays with you after. Three states of mind. One unmistakable line.',
+          visual_tag:'The road belongs to those who feel it', visual_caption:'In motion,<br>find stillness.', spec_power:'Hybrid powertrain', spec_accel:'Acceleration 0—100 km/h', spec_speed:'Top speed', spec_series:'Cars in the series',
+          model_note:'Every car is assembled by hand in Torino', model_cta:'Arrange a private viewing',
+          atelier_hours:'hours of care in every detail', atelier_kicker:'ATELIER · TORINO', atelier_title:'Made by hand.<br><em>Made for you.</em>',
+          atelier_body:'Vespera takes shape in a small atelier where every maker has a name and every detail has a story. Your car will be one of one, because that is how you imagined it.',
+          craft_1_title:'Materials with character', craft_1_body:'Italian leather, titanium and carbon fibre — without compromise or excess.',
+          craft_2_title:'Your own palette', craft_2_body:'More than 240 shades. Or a colour that exists only for you.',
+          craft_3_title:'Hand-assembled', craft_3_body:'One car. One team. Not a stitch out of place.', atelier_cta:'Step inside the atelier',
+          limited_kicker:'A RARE OPPORTUNITY', limited_title:'Not for everyone.<br><em>Just for you.</em>',
+          limited_body:'Vespera will be built in a limited series of twelve cars. Not for exclusivity alone, but to protect what inspired it: attention, time and a personal touch.',
+          limited_button:'Enquire about availability', limited_note:'Bespoke configuration · private viewing',
+          footer_kicker:'YOUR STORY BEGINS HERE', footer_title:'Let us talk about<br><em>your Vespera.</em>', footer_button:'Request a private viewing',
+          footer_brochure:'Download the brochure', footer_note:'An independent automotive marque. Intentionally created. Hand-assembled.', footer_explore:'Explore', footer_contact:'Contact', footer_rights:'All rights reserved', back_top:'Back to top ↑', footer_design:'Made to be timeless', fiction_note:'Fictional marque · concept only',
+          form_kicker:'A PERSONAL CONVERSATION', form_title:'Let us get acquainted.', form_intro:'Leave your details and our representative will be in touch to arrange a private viewing.', form_name:'Your name', form_email:'Email address', form_interest:'I am interested in', form_option_1:'A private viewing', form_option_2:'The Vespera brochure', form_option_3:'A bespoke configuration', form_option_4:'The atelier and materials', form_option_5:'A general enquiry', form_option_6:'Press and partnerships', form_demo_note:'Demo form: enquiry delivery is not connected.', form_send:'Send enquiry', success_title:'Thank you.', success_body:'Your enquiry has been received. An AURELION representative will be in touch shortly.'
+        }
+      };
+      const driveModes = {
+        ru: {
+          gt: { name: 'Gran Turismo', description: 'Спокойный пульс, длинная дуга и адаптивная подвеска. Vespera умеет быть безупречно деликатной.' },
+          sport: { name: 'Sport', description: 'Отклик острее, рулевое управление плотнее, а гибридная система держит мощность наготове.' },
+          corsa: { name: 'Corsa', description: 'Активная аэродинамика создаёт прижимную силу. Всё лишнее исчезает — остаётся только траектория.' }
+        },
+        en: {
+          gt: { name: 'Gran Turismo', description: 'A calmer pulse, a longer arc and adaptive suspension. Vespera knows how to be effortlessly composed.' },
+          sport: { name: 'Sport', description: 'Sharper response, more direct steering and the hybrid system holding its power in reserve.' },
+          corsa: { name: 'Corsa', description: 'Active aerodynamics build downforce. Everything unnecessary falls away — leaving only the line.' }
+        }
+      };
+      const vehicleDetails = {
+        ru: {
+          aero: { index: '01 / 03', title: 'Активная аэродинамика', body: 'Профиль кузова меняется вместе с темпом движения: низкое сопротивление на прямой, точная прижимная сила в повороте.' },
+          cockpit: { index: '02 / 03', title: 'Кокпит, обращённый к водителю', body: 'Низкая посадка, цельная архитектура приборной панели и механические регуляторы из анодированного титана.' },
+          chassis: { index: '03 / 03', title: 'Монокок из углеволокна', body: 'Центральная структура из композитного материала сочетается с адаптивной подвеской и векторным распределением тяги.' }
+        },
+        en: {
+          aero: { index: '01 / 03', title: 'Active aerodynamics', body: 'The body profile responds to the pace: low drag on the straight, measured downforce through the corner.' },
+          cockpit: { index: '02 / 03', title: 'A cockpit for the driver', body: 'A low seating position, a unified instrument architecture and tactile controls machined from anodised titanium.' },
+          chassis: { index: '03 / 03', title: 'Carbon-fibre monocoque', body: 'A composite central structure works with adaptive suspension and torque-vectoring all-wheel drive.' }
+        }
+      };
+      const configOptions = {
+        paint: {
+          blu: { code: 'BLU', image: 'public/aurelion-hero.jpg', name: { ru: 'Blu Notte', en: 'Blu Notte' } },
+          argento: { code: 'ARG', image: 'public/aurelion-config-argento.jpg', name: { ru: 'Argento Nuvola', en: 'Argento Nuvola' } },
+          rosso: { code: 'ROS', image: 'public/aurelion-config-rosso.jpg', name: { ru: 'Rosso Vespera', en: 'Rosso Vespera' } }
+        },
+        interior: {
+          nero: { code: 'NERO', name: { ru: 'Nero Intenso', en: 'Nero Intenso' } },
+          sabbia: { code: 'SABBIA', name: { ru: 'Cuoio Sabbia', en: 'Cuoio Sabbia' } },
+          blu: { code: 'BLU', name: { ru: 'Blu Profondo', en: 'Blu Profondo' } }
+        },
+        wheels: {
+          vela: { code: 'VELA', name: { ru: 'Vela forged', en: 'Vela forged' } },
+          turbina: { code: 'TURBINA', name: { ru: 'Turbina 21', en: 'Turbina 21' } }
+        }
+      };
+      const configMessages = {
+        ru: { saved: 'Сборка сохранена в этом браузере.', copied: 'Ссылка на сборку скопирована.', shared: 'Сборка передана в меню отправки.', failed: 'Не удалось сохранить сборку в этом браузере.' },
+        en: { saved: 'Your build is saved in this browser.', copied: 'Build link copied to clipboard.', shared: 'Build shared from your device.', failed: 'This browser could not save the build.' }
+      };
+      const root = document.documentElement;
+      root.classList.add('js-ready');
+      const header = document.getElementById('site-header');
+      const progress = document.querySelector('.scroll-progress');
+      const menuButton = document.getElementById('menu-toggle');
+      const nav = document.getElementById('main-nav');
+      const languageButton = document.getElementById('language-toggle');
+      const dialog = document.getElementById('contact-dialog');
+      const closeButton = document.getElementById('dialog-close');
+      const form = document.getElementById('contact-form');
+      const formSuccess = document.getElementById('form-success');
+      const formInterest = document.getElementById('form-interest');
+      const formConfigSummary = document.getElementById('form-config-summary');
+      const hiddenBuild = document.getElementById('hidden-build');
+      const configImage = document.getElementById('config-image');
+      const configPaintName = document.getElementById('config-paint-name');
+      const configCode = document.getElementById('build-code');
+      const configSummaryText = document.getElementById('build-summary-text');
+      const configStatus = document.getElementById('config-status');
+      const detailCard = document.getElementById('vehicle-detail');
+      const detailClose = document.getElementById('detail-close');
+      const detailIndex = document.getElementById('detail-index');
+      const detailTitle = document.getElementById('detail-title');
+      const detailBody = document.getElementById('detail-body');
+      const hotspotButtons = [...document.querySelectorAll('.hotspot')];
+      const modeTabs = [...document.querySelectorAll('.mode-tab')];
+      const modeName = document.getElementById('mode-name');
+      const modeDescription = document.getElementById('mode-description');
+      const modeCount = document.getElementById('mode-count');
+      const modePanel = document.getElementById('mode-panel');
+      let currentLanguage = 'ru';
+      let activeMode = 'gt';
+      let activeDetail = null;
+      const configState = { paint: 'blu', interior: 'nero', wheels: 'vela' };
+
+      const getBuildCode = () => `AV-01-${configOptions.paint[configState.paint].code}-${configOptions.interior[configState.interior].code}-${configOptions.wheels[configState.wheels].code}`;
+      const getBuildSummary = () => [
+        configOptions.paint[configState.paint].name[currentLanguage],
+        configOptions.interior[configState.interior].name[currentLanguage],
+        configOptions.wheels[configState.wheels].name[currentLanguage]
+      ].join(' · ');
+      const updateConfig = (animate = false) => {
+        const selectedPaint = configOptions.paint[configState.paint];
+        if (animate) configImage.classList.add('is-changing');
+        configImage.src = selectedPaint.image;
+        configImage.alt = currentLanguage === 'ru' ? `AURELION Vespera в цвете ${selectedPaint.name.ru}` : `AURELION Vespera in ${selectedPaint.name.en}`;
+        configPaintName.textContent = selectedPaint.name[currentLanguage];
+        configCode.textContent = getBuildCode();
+        configSummaryText.textContent = getBuildSummary();
+        document.querySelectorAll('[data-paint]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.paint === configState.paint)));
+        document.querySelectorAll('[data-interior]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.interior === configState.interior)));
+        document.querySelectorAll('[data-wheels]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.wheels === configState.wheels)));
+        hiddenBuild.value = `${getBuildCode()} · ${getBuildSummary()}`;
+        if (animate) window.setTimeout(() => configImage.classList.remove('is-changing'), 320);
+      };
+      const showConfigStatus = (message) => {
+        configStatus.textContent = message;
+        window.clearTimeout(showConfigStatus.timer);
+        showConfigStatus.timer = window.setTimeout(() => { configStatus.textContent = ''; }, 4200);
+      };
+      const updateVehicleDetail = (detailKey = activeDetail) => {
+        activeDetail = detailKey;
+        if (!detailKey) {
+          detailCard.classList.remove('is-open');
+          detailCard.setAttribute('aria-hidden', 'true');
+          hotspotButtons.forEach((button) => button.setAttribute('aria-expanded', 'false'));
+          return;
+        }
+        const info = vehicleDetails[currentLanguage][detailKey];
+        detailIndex.textContent = info.index;
+        detailTitle.textContent = info.title;
+        detailBody.textContent = info.body;
+        detailCard.classList.add('is-open');
+        detailCard.setAttribute('aria-hidden', 'false');
+        hotspotButtons.forEach((button) => {
+          const isActive = button.dataset.detail === detailKey;
+          button.setAttribute('aria-expanded', String(isActive));
+          button.setAttribute('aria-label', vehicleDetails[currentLanguage][button.dataset.detail].title);
+        });
+      };
+      const updateDriveMode = () => {
+        const selected = driveModes[currentLanguage][activeMode];
+        modeName.textContent = selected.name;
+        modeDescription.textContent = selected.description;
+        modeCount.textContent = String(modeTabs.findIndex((tab) => tab.dataset.mode === activeMode) + 1).padStart(2, '0');
+        modeTabs.forEach((tab) => {
+          const isActive = tab.dataset.mode === activeMode;
+          tab.setAttribute('aria-selected', String(isActive));
+          tab.tabIndex = isActive ? 0 : -1;
+        });
+        modePanel.setAttribute('aria-labelledby', modeTabs.find((tab) => tab.dataset.mode === activeMode).id);
+      };
+      modeTabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+          activeMode = tab.dataset.mode;
+          updateDriveMode();
+        });
+        tab.addEventListener('keydown', (event) => {
+          let nextIndex = index;
+          if (event.key === 'ArrowRight') nextIndex = (index + 1) % modeTabs.length;
+          else if (event.key === 'ArrowLeft') nextIndex = (index - 1 + modeTabs.length) % modeTabs.length;
+          else if (event.key === 'Home') nextIndex = 0;
+          else if (event.key === 'End') nextIndex = modeTabs.length - 1;
+          else return;
+          event.preventDefault();
+          activeMode = modeTabs[nextIndex].dataset.mode;
+          updateDriveMode();
+          modeTabs[nextIndex].focus();
+        });
+      });
+      updateDriveMode();
+
+      const isValidChoice = (group, value) => Boolean(configOptions[group][value]);
+      const applyBuild = (build) => {
+        if (!build || typeof build !== 'object') return;
+        ['paint', 'interior', 'wheels'].forEach((group) => {
+          if (isValidChoice(group, build[group])) configState[group] = build[group];
+        });
+      };
+      try {
+        const sharedBuild = new URLSearchParams(window.location.search).get('build');
+        if (sharedBuild) {
+          const [paint, interior, wheels] = sharedBuild.split('.');
+          applyBuild({ paint, interior, wheels });
+        } else {
+          const savedBuild = window.localStorage.getItem('aurelion-vespera-build');
+          if (savedBuild) applyBuild(JSON.parse(savedBuild));
+        }
+      } catch (error) {
+        console.info('Configuration could not be loaded; using the default build.');
+      }
+      updateConfig();
+
+      document.querySelectorAll('[data-paint], [data-interior], [data-wheels]').forEach((button) => {
+        button.addEventListener('click', () => {
+          if (button.dataset.paint) configState.paint = button.dataset.paint;
+          if (button.dataset.interior) configState.interior = button.dataset.interior;
+          if (button.dataset.wheels) configState.wheels = button.dataset.wheels;
+          updateConfig(true);
+          configStatus.textContent = '';
+        });
+      });
+      document.getElementById('save-config').addEventListener('click', () => {
+        try {
+          window.localStorage.setItem('aurelion-vespera-build', JSON.stringify(configState));
+          showConfigStatus(configMessages[currentLanguage].saved);
+        } catch (error) {
+          showConfigStatus(configMessages[currentLanguage].failed);
+        }
+      });
+      const buildShareUrl = () => {
+        const url = new URL(window.location.href);
+        url.searchParams.set('build', `${configState.paint}.${configState.interior}.${configState.wheels}`);
+        url.hash = 'configure';
+        return url.toString();
+      };
+      document.getElementById('share-config').addEventListener('click', async () => {
+        const url = buildShareUrl();
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: 'AURELION Vespera', text: getBuildSummary(), url });
+            showConfigStatus(configMessages[currentLanguage].shared);
+            return;
+          } catch (error) {
+            if (error.name === 'AbortError') return;
+          }
+        }
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(url);
+          } else {
+            const field = document.createElement('textarea');
+            field.value = url;
+            field.setAttribute('readonly', '');
+            field.style.position = 'fixed';
+            field.style.opacity = '0';
+            document.body.appendChild(field);
+            field.select();
+            const copied = document.execCommand('copy');
+            field.remove();
+            if (!copied) throw new Error('Copy command failed');
+          }
+          showConfigStatus(configMessages[currentLanguage].copied);
+        } catch (error) {
+          showConfigStatus(url);
+        }
+      });
+
+      hotspotButtons.forEach((button) => button.addEventListener('click', () => {
+        updateVehicleDetail(activeDetail === button.dataset.detail ? null : button.dataset.detail);
+      }));
+      detailClose.addEventListener('click', () => updateVehicleDetail(null));
+      document.querySelector('.model-visual').addEventListener('click', (event) => {
+        if (activeDetail && !event.target.closest('.hotspot') && !event.target.closest('.detail-card')) updateVehicleDetail(null);
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && activeDetail) updateVehicleDetail(null);
+      });
+
+      const updateScroll = () => {
+        const y = window.scrollY || 0;
+        header.classList.toggle('is-scrolled', y > 24);
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = `${scrollable > 0 ? (y / scrollable) * 100 : 0}%`;
+      };
+      updateScroll();
+      window.addEventListener('scroll', updateScroll, { passive: true });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+      menuButton.addEventListener('click', () => {
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!expanded));
+        menuButton.setAttribute('aria-label', currentLanguage === 'ru' ? (expanded ? 'Открыть меню' : 'Закрыть меню') : (expanded ? 'Open menu' : 'Close menu'));
+        nav.classList.toggle('is-open', !expanded);
+      });
+      nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', currentLanguage === 'ru' ? 'Открыть меню' : 'Open menu');
+      }));
+      document.addEventListener('click', (event) => {
+        if (!nav.classList.contains('is-open') || nav.contains(event.target) || menuButton.contains(event.target)) return;
+        nav.classList.remove('is-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', currentLanguage === 'ru' ? 'Открыть меню' : 'Open menu');
+      });
+
+      const setLanguage = (language) => {
+        currentLanguage = language;
+        root.lang = language;
+        document.querySelectorAll('[data-i18n]').forEach((element) => {
+          const translation = translations[language][element.dataset.i18n];
+          if (translation) element.innerHTML = translation;
+        });
+        languageButton.innerHTML = language === 'ru' ? 'RU <span>/</span> EN' : 'EN <span>/</span> RU';
+        languageButton.setAttribute('aria-label', language === 'ru' ? 'Switch language to English' : 'Переключить язык на русский');
+        nav.setAttribute('aria-label', language === 'ru' ? 'Основная навигация' : 'Main navigation');
+        menuButton.setAttribute('aria-label', language === 'ru' ? 'Открыть меню' : 'Open menu');
+        closeButton.setAttribute('aria-label', language === 'ru' ? 'Закрыть окно' : 'Close dialog');
+        detailClose.setAttribute('aria-label', language === 'ru' ? 'Закрыть описание' : 'Close detail');
+        document.title = language === 'ru' ? 'AURELION — инженерия, ставшая искусством' : 'AURELION — engineering, elevated to art';
+        document.querySelector('meta[property="og:title"]').content = language === 'ru' ? 'AURELION Vespera — инженерия, ставшая искусством' : 'AURELION Vespera — engineering, elevated to art';
+        document.querySelector('meta[property="og:description"]').content = language === 'ru' ? 'Гиперкар Vespera: инженерия, ателье и индивидуальная конфигурация.' : 'Discover Vespera: considered engineering, an independent atelier and bespoke configuration.';
+        document.querySelector('.mode-tabs').setAttribute('aria-label', language === 'ru' ? 'Режимы движения' : 'Driving modes');
+        document.querySelector('.timeline').setAttribute('aria-label', language === 'ru' ? 'Хронология AURELION' : 'AURELION timeline');
+        hotspotButtons.forEach((button) => button.setAttribute('aria-label', vehicleDetails[language][button.dataset.detail].title));
+        updateDriveMode();
+        updateConfig();
+        if (activeDetail) updateVehicleDetail(activeDetail);
+      };
+      languageButton.addEventListener('click', () => setLanguage(currentLanguage === 'ru' ? 'en' : 'ru'));
+
+      const openDialog = (event) => {
+        const source = event.currentTarget;
+        if (source.dataset.interest) formInterest.value = source.dataset.interest;
+        const includeBuild = source.dataset.configEnquiry === 'true';
+        formConfigSummary.hidden = !includeBuild;
+        formConfigSummary.textContent = includeBuild ? `${currentLanguage === 'ru' ? 'Выбранная сборка' : 'Selected build'}: ${getBuildCode()} · ${getBuildSummary()}` : '';
+        hiddenBuild.value = includeBuild ? `${getBuildCode()} · ${getBuildSummary()}` : '';
+        updateVehicleDetail(null);
+        if (nav.classList.contains('is-open')) {
+          nav.classList.remove('is-open');
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.setAttribute('aria-label', currentLanguage === 'ru' ? 'Открыть меню' : 'Open menu');
+        }
+        dialog.showModal();
+      };
+      document.querySelectorAll('.js-contact').forEach((button) => button.addEventListener('click', openDialog));
+      closeButton.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+      dialog.addEventListener('close', () => {
+        form.reset();
+        formInterest.value = 'presentation';
+        formConfigSummary.hidden = true;
+        formConfigSummary.textContent = '';
+        hiddenBuild.value = '';
+        form.hidden = false;
+        formSuccess.hidden = true;
+      });
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        form.hidden = true;
+        formSuccess.hidden = false;
+      });
+      const incomingParams = new URLSearchParams(window.location.search);
+      if (incomingParams.get('open') === 'contact') {
+        const incomingInterest = incomingParams.get('interest');
+        window.setTimeout(() => {
+          const trigger = document.querySelector('.header-cta.js-contact');
+          if ([...formInterest.options].some((option) => option.value === incomingInterest)) trigger.dataset.interest = incomingInterest;
+          trigger.click();
+        }, 160);
+      }
+    })();
+  </script>
+</body>
+</html>
