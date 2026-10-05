@@ -1,1 +1,55 @@
+name: Publish AURELION site to GitHub Pages
 
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set the Pages URL in social metadata
+        shell: bash
+        run: |
+          owner="${GITHUB_REPOSITORY_OWNER}"
+          repo="${GITHUB_REPOSITORY#*/}"
+          if [[ "$repo" == "$owner.github.io" ]]; then
+            base_url="https://${owner}.github.io"
+          else
+            base_url="https://${owner}.github.io/${repo}"
+          fi
+          sed -i "s|https://aurelion.example|${base_url}|g" index.html vespera.html
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Assemble the public site
+        run: |
+          mkdir -p _site
+          cp index.html vespera.html _site/
+          cp -R public _site/
+
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
